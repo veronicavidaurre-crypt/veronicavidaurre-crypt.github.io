@@ -172,7 +172,31 @@ body.con-intro { overflow: hidden; }
 }
 
 /* ─── ESTUDIO DE CASO (adelanto con pincel) ────────────────────── */
-.caso-adelanto { padding: var(--seccion) 0; }
+.casos { padding: var(--seccion) 0; }
+.caso-adelanto { padding: clamp(40px, 6vw, 80px) 0; border-top: 1.5px solid var(--linea); }
+.caso-adelanto:first-of-type { border-top: 0; }
+.caso-adelanto__num { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--celeste); }
+.caso-adelanto .titulo-m { padding-top: 0.05em; }
+.casos .chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.casos .chips li { padding: 6px 14px; border-radius: 999px; border: 1.5px solid currentColor; font-size: 14px; font-weight: 550; }
+/* caso 2: la pantalla de inicio de Reka con objetos del cuarto flotando alrededor */
+.caso-adelanto--reka { grid-template-columns: 1.25fr 1fr; }
+.reka-adelanto { position: relative; display: block; padding: clamp(18px, 4vw, 44px); }
+.reka-adelanto__pantalla { display: block; border-radius: 14px; overflow: hidden; border: 8px solid var(--rosa); box-shadow: 0 30px 70px var(--sombra); rotate: 1.5deg; transition: rotate 0.6s cubic-bezier(.2, .8, .2, 1); }
+.reka-adelanto__pantalla video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--indigo); }
+.reka-adelanto__obj { position: absolute; height: auto; filter: drop-shadow(0 14px 18px var(--sombra)); animation: obj-flota 5s ease-in-out infinite; transition: translate 0.6s cubic-bezier(.3, 1.4, .5, 1); }
+.reka-adelanto__obj--dulce { width: 20%; left: -2%; top: 4%; animation-delay: -1s; }
+.reka-adelanto__obj--lata  { width: 11%; right: 0; top: -4%; animation-delay: -2.4s; }
+.reka-adelanto__obj--avion { width: 21%; right: -3%; bottom: 4%; animation-delay: -3.1s; }
+.reka-adelanto__obj--audif { width: 17%; left: 2%; bottom: -2%; animation-delay: -0.4s; }
+@keyframes obj-flota { 50% { transform: translateY(-10px) rotate(6deg); } }
+@media (hover: hover) {
+  .reka-adelanto:hover .reka-adelanto__pantalla { rotate: -1deg; }
+  .reka-adelanto:hover .reka-adelanto__obj--dulce { translate: -14px -10px; }
+  .reka-adelanto:hover .reka-adelanto__obj--lata  { translate: 10px -14px; }
+  .reka-adelanto:hover .reka-adelanto__obj--avion { translate: 18px 6px; }
+  .reka-adelanto:hover .reka-adelanto__obj--audif { translate: -12px 10px; }
+}
 .caso-adelanto__grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
 .caso-adelanto__texto { display: grid; gap: 20px; justify-items: start; }
 .caso-adelanto__texto > p { max-width: 42ch; }
@@ -197,7 +221,8 @@ body.con-intro { overflow: hidden; }
   background: url('../assets/img/caso/cinta-rosa.webp') center / contain no-repeat; rotate: 3deg; z-index: 2;
 }
 @media (max-width: 900px) {
-  .caso-adelanto__grid { grid-template-columns: 1fr; }
+  .caso-adelanto__grid, .caso-adelanto--reka { grid-template-columns: 1fr; }
+  .caso-adelanto--reka .reka-adelanto { order: 2; }
   .pincel { rotate: -1deg; }
 }
 

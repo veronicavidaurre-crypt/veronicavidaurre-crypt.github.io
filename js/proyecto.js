@@ -176,10 +176,10 @@
       <div class="fin">
         <img src="assets/img/logo/gato-rosa.png" alt="" width="76" height="72">
         <p class="fin__titulo">¡viste todos mis trabajos!</p>
-        <p>Gracias por llegar hasta aquí. Puedes volver al inicio, leer cómo trabajo en el estudio de caso o escribirme.</p>
+        <p>Gracias por llegar hasta aquí. Puedes volver al inicio, ver cómo trabajo en los estudios de caso o escribirme.</p>
         <div class="fin__botones">
           <a class="boton boton--lleno" href="index.html">${V.flecha(180)} volver al inicio</a>
-          <a class="boton" href="estudio-de-caso.html">leer el estudio de caso</a>
+          <a class="boton" href="index.html#casos">ver los estudios de caso</a>
           <a class="boton" href="#contacto">contacto</a>
         </div>
       </div>

@@ -25,9 +25,8 @@ VERUZH.contacto = {
   // WhatsApp: código de Bolivia (591) + número, sin espacios ni signos
   whatsapp: '59169596914',
   ciudad: 'La Paz, Bolivia',
-  // ⚠ PEGA AQUÍ EL LINK DE TU BEHANCE (entre las comillas).
-  //   Mientras esté vacío, el botón aparece como "próximamente".
-  behance: ''
+  // Link de Behance. Si lo cambias, deja las comillas.
+  behance: 'https://www.behance.net/veruzh'
 };
 
 /* ─── 2. PROYECTOS ──────────────────────────────────────────────

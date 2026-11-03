@@ -379,6 +379,13 @@
   });
 
 
+  /* ─── 5b. CASO 2: la pantalla de Reka se mueve solo cuando se ve ── */
+  const videoReka = $('.reka-adelanto video');
+  if (videoReka && !V.menosMovimiento) V.observar(ents => {
+    if (ents[0].isIntersecting) { videoReka.preload = 'auto'; videoReka.play().catch(() => {}); } else videoReka.pause();
+  }, { threshold: 0.3 }).observe(videoReka);
+
+
   /* ─── 5. ESTUDIO DE CASO: pincel boceto → final ─────────────── */
   const area = $('.pincel__area');
   if (area) {

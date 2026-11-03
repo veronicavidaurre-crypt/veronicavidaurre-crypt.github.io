@@ -42,7 +42,7 @@ V.flecha = (giro = 0) =>
 V.paginas = [
   { n: '01', texto: 'inicio', href: 'index.html', id: 'inicio' },
   { n: '02', texto: 'trabajos', href: 'index.html#trabajos', id: 'trabajos' },
-  { n: '03', texto: 'estudio de caso', href: 'estudio-de-caso.html', id: 'caso' },
+  { n: '03', texto: 'estudios de caso', href: 'index.html#casos', id: 'caso' },
   { n: '04', texto: 'sobre mí', href: 'sobre-mi.html', id: 'sobre' },
   { n: '05', texto: 'contacto', href: '#contacto', id: 'contacto' }
 ];

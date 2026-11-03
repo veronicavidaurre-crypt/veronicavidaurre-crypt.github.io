@@ -74,28 +74,60 @@
       </div>
     </section>
 
-    <!-- ═══ 03 · ESTUDIO DE CASO (adelanto) ═══ -->
-    <section class="caso-adelanto tema-vino" id="caso">
-      <div class="contenedor caso-adelanto__grid">
-        <div class="caso-adelanto__texto">
-          <p class="etiqueta">03 — estudio de caso</p>
-          <h2 class="titulo-l"><span class="barrido">balas</span><br><span class="barrido">perdidas</span></h2>
-          <p class="revela">Rediseño de la portada del álbum <em>Balas perdidas</em> de Morat. Una cámara que dispara recuerdos en lugar de balas.</p>
-          <p class="caso-adelanto__pista revela" data-retraso="1">
-            <span class="solo-mouse">Pasa el mouse sobre el boceto para ver la ilustración final.</span>
-            <span class="solo-tactil">Desliza el dedo sobre el boceto para ver la ilustración final.</span>
-          </p>
-          <div class="caso-adelanto__botones revela" data-retraso="2">
-            <a class="boton boton--lleno" href="estudio-de-caso.html">leer el estudio de caso <span data-flecha></span></a>
-            <button class="boton" type="button" data-revelar>ver final</button>
+    <!-- ═══ 03 · ESTUDIOS DE CASO (adelantos) ═══
+         Dos casos contados de principio a fin. Cada uno lleva a su página. -->
+    <section class="casos tema-vino" id="casos">
+      <div class="contenedor">
+        <header class="seccion-cabeza">
+          <p class="etiqueta">03 — estudios de caso</p>
+          <h2 class="titulo-l"><span class="barrido">estudios</span> <span class="barrido">de caso</span></h2>
+          <p class="seccion-cabeza__texto revela">Dos proyectos contados de principio a fin. Qué hacía falta, cómo lo resolví y cómo funciona en la vida real.</p>
+        </header>
+
+        <!-- CASO 01 · Balas perdidas (pincel boceto → final) -->
+        <article class="caso-adelanto caso-adelanto__grid" id="caso">
+          <div class="caso-adelanto__texto">
+            <p class="caso-adelanto__num">caso 01 · diseño editorial e ilustración</p>
+            <h3 class="titulo-m">balas perdidas</h3>
+            <p class="revela">Rediseño de la portada del álbum <em>Balas perdidas</em> de Morat. Una cámara que dispara recuerdos en lugar de balas.</p>
+            <p class="caso-adelanto__pista revela" data-retraso="1">
+              <span class="solo-mouse">Pasa el mouse sobre el boceto para ver la ilustración final.</span>
+              <span class="solo-tactil">Desliza el dedo sobre el boceto para ver la ilustración final.</span>
+            </p>
+            <div class="caso-adelanto__botones revela" data-retraso="2">
+              <a class="boton boton--lleno" href="estudio-de-caso.html">leer el estudio de caso <span data-flecha></span></a>
+              <button class="boton" type="button" data-revelar>ver final</button>
+            </div>
           </div>
-        </div>
-        <figure class="pincel revela" data-cursor="pinta">
-          <div class="pincel__area">
-            <img src="assets/img/caso/sketch-polaroid.jpg" alt="Boceto a lápiz de la portada, una polaroid con un ramo de flores" width="720" height="538" loading="lazy">
+          <figure class="pincel revela" data-cursor="pinta">
+            <div class="pincel__area">
+              <img src="assets/img/caso/sketch-polaroid.jpg" alt="Boceto a lápiz de la portada, una polaroid con un ramo de flores" width="720" height="538" loading="lazy">
+            </div>
+            <figcaption class="pincel__nota">boceto → final</figcaption>
+          </figure>
+        </article>
+
+        <!-- CASO 02 · Reka, kit de stream (los objetos del cuarto flotan) -->
+        <article class="caso-adelanto caso-adelanto__grid caso-adelanto--reka">
+          <a class="reka-adelanto revela" href="estudio-de-caso-2.html" data-cursor="ver el caso" aria-label="Ver el estudio de caso Reka, kit de stream">
+            <span class="reka-adelanto__pantalla">
+              <video src="assets/video/reka-pantalla-inicio.mp4" poster="assets/img/posters/reka-pantalla-inicio.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            </span>
+            <img class="reka-adelanto__obj reka-adelanto__obj--dulce" src="assets/img/reka/dulce.webp" alt="" width="560" height="400" loading="lazy">
+            <img class="reka-adelanto__obj reka-adelanto__obj--lata" src="assets/img/reka/lata.webp" alt="" width="352" height="560" loading="lazy">
+            <img class="reka-adelanto__obj reka-adelanto__obj--avion" src="assets/img/reka/avion.webp" alt="" width="560" height="442" loading="lazy">
+            <img class="reka-adelanto__obj reka-adelanto__obj--audif" src="assets/img/reka/audifonos.webp" alt="" width="560" height="515" loading="lazy">
+          </a>
+          <div class="caso-adelanto__texto">
+            <p class="caso-adelanto__num">caso 02 · identidad para streaming</p>
+            <h3 class="titulo-m">kit de stream reka</h3>
+            <p class="revela">Pantallas, overlays y cinco alertas animadas para un canal de juegos y charlas. El stream es el cuarto de Reka y cada objeto del cuarto se vuelve un aviso.</p>
+            <ul class="chips revela" data-retraso="1"><li>10 piezas</li><li>5 alertas animadas</li><li>OBS y Twitch</li></ul>
+            <div class="caso-adelanto__botones revela" data-retraso="2">
+              <a class="boton boton--lleno" href="estudio-de-caso-2.html">leer el estudio de caso <span data-flecha></span></a>
+            </div>
           </div>
-          <figcaption class="pincel__nota">boceto → final</figcaption>
-        </figure>
+        </article>
       </div>
     </section>
 

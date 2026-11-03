@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reka · kit de stream · estudio de caso · veruzh</title>
+  <meta name="description" content="Estudio de caso: identidad visual completa para Reka, un canal de streaming. Pantallas, overlays y alertas animadas, por Verónica Vidaurre (veruzh).">
+  <meta name="theme-color" content="#2B214A">
+  <link rel="icon" href="assets/img/logo/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/caso.css">
+  <link rel="stylesheet" href="css/caso2.css">
+</head>
+<!--
+  ESTUDIO DE CASO 2 · Reka, kit de stream
+  Misma estructura que el caso 1 (pedida en el PDF de requisitos):
+    · Ficha técnica de cabecera
+    · Acto 1  El conflicto y el brief      → ¿Cuál era la necesidad?
+    · Acto 2  El proceso y transformación  → ¿Cómo pensé y probé la solución?
+    · Acto 3  El desenlace y el impacto    → ¿Cómo funciona en la vida real?
+    · Sección electiva B · Gestión de restricciones
+  Los estilos compartidos están en caso.css; los propios de esta página en caso2.css.
+  Los colores del KIT (naranja, lima, ciruela, crema) son contenido del
+  proyecto; la interfaz de la web sigue usando solo tu paleta.
+-->
+<body data-pagina="caso" class="tema-rosa">
+<main class="caso caso2">
+
+  <!-- ═══ PORTADA DEL CASO + FICHA TÉCNICA ═══ -->
+  <header class="caso-hero tema-indigo">
+    <div class="contenedor caso-hero__grid">
+      <div class="caso-hero__texto">
+        <nav class="migas" aria-label="Estás aquí">
+          <a href="index.html">inicio</a><span aria-hidden="true">/</span>
+          <a href="index.html#casos">estudios de caso</a><span aria-hidden="true">/</span>
+          <span aria-current="page">reka</span>
+        </nav>
+        <p class="etiqueta">estudio de caso · 02</p>
+        <h1 class="titulo-xl caso-hero__titulo"><span class="barrido">kit de</span> <span class="barrido">stream</span> <span class="barrido reka-nombre">reka</span></h1>
+        <p class="caso-hero__bajada revela">Identidad visual completa para un canal de streaming. <b>Pantallas, overlays y alertas</b> que se sienten como un mismo cuarto.</p>
+      </div>
+      <div class="revela reka-hero__foto" data-retraso="1">
+        <figure class="polaroid polaroid--hero">
+          <video class="reka-hero__video" src="assets/video/reka-pantalla-inicio.mp4" poster="assets/img/posters/reka-pantalla-inicio.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Pantalla de inicio animada del kit Reka"></video>
+          <figcaption>empezando pronto · reka</figcaption>
+        </figure>
+        <img class="reka-hero__lampara flotar" src="assets/img/reka/lampara.webp" alt="" aria-hidden="true" width="373" height="560">
+        <img class="reka-hero__avion" src="assets/img/reka/avion.webp" alt="" aria-hidden="true" width="560" height="442">
+      </div>
+    </div>
+
+    <!-- Ficha técnica de cabecera (requisito 3 del PDF) -->
+    <dl class="contenedor ficha-caso ficha-caso--5 revela">
+      <div><dt>Proyecto</dt><dd>Reka · kit de stream. Proyecto personal</dd></div>
+      <div><dt>Año</dt><dd>2026</dd></div>
+      <div><dt>Disciplina</dt><dd>Identidad visual para streaming, ilustración y motion graphics</dd></div>
+      <div><dt>Herramientas</dt><dd>Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro y Canva</dd></div>
+      <div><dt>Mi rol</dt><dd>Concepto, dirección de arte, ilustración, diseño de overlays y animación de alertas</dd></div>
+    </dl>
+    <ul class="contenedor cifras">
+      <li class="revela"><b data-cuenta="10">10</b><span>piezas en total</span></li>
+      <li class="revela" data-retraso="1"><b data-cuenta="2">2</b><span>pantallas, inicio y cierre</span></li>
+      <li class="revela" data-retraso="2"><b data-cuenta="3">3</b><span>overlays, juego, charla y cámara</span></li>
+      <li class="revela" data-retraso="3"><b data-cuenta="5">5</b><span>alertas animadas</span></li>
+    </ul>
+  </header>
+
+  <!-- ═══ BARRA DE ACTOS ═══ -->
+  <nav class="actos" aria-label="Partes del estudio de caso">
+    <div class="actos__pastilla">
+      <a href="#acto1"><b>1</b> brief</a>
+      <a href="#acto2"><b>2</b> proceso</a>
+      <a href="#acto3"><b>3</b> resultado</a>
+      <a href="#limites"><b>4</b> límites</a>
+      <span class="actos__barra" aria-hidden="true"><span></span></span>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ ACTO 1 · EL CONFLICTO Y EL BRIEF ═══════════════ -->
+  <section class="acto tema-rosa" id="acto1" data-acto="0">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">acto 1 · el conflicto y el brief</p>
+        <h2 class="titulo-l"><span class="barrido">el brief</span></h2>
+        <p class="acto__pregunta revela">¿Cuál era la necesidad?</p>
+      </header>
+
+      <div class="problema">
+        <div class="revela">
+          <h3 class="subtitulo">El problema</h3>
+          <p>Muchos canales pequeños arman su stream con overlays gratuitos y plantillas sueltas. Funciona, pero cada pieza viene de un lugar distinto y <mark>el canal no se recuerda</mark>.</p>
+          <p>Como proyecto personal, me propuse diseñar la identidad completa de <b>Reka</b>, un canal de juegos y charlas con un tono relajado y nocturno. La meta era resolver todo el kit con un solo lenguaje visual.</p>
+        </div>
+        <figure class="plantillas revela" data-retraso="1">
+          <p class="mini-titulo">lo que suele pasar</p>
+          <div class="plantillas__fila" aria-hidden="true">
+            <span class="plantilla plantilla--neon"><i>plantilla 1</i></span>
+            <span class="plantilla plantilla--rayas"><i>plantilla 2</i></span>
+            <span class="plantilla plantilla--gris"><i>plantilla 3</i></span>
+          </div>
+          <figcaption>Tres estilos en un mismo stream. Neón, rayas y gris, y nada dice quién está transmitiendo.</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="subtitulo revela">El brief, punto por punto</h3>
+      <ol class="brief">
+        <li class="ficha-brief revela">
+          <span class="ficha-brief__n">01</span>
+          <h4>La necesidad</h4>
+          <p>Un kit propio, coherente y listo para usar, que haga reconocible al canal desde la primera pantalla.</p>
+        </li>
+        <li class="ficha-brief revela" data-retraso="1">
+          <span class="ficha-brief__n">02</span>
+          <h4>El contexto</h4>
+          <p>Proyecto personal pensado para OBS y Twitch. Escenas en 16:9 y alertas en formato cuadrado.</p>
+        </li>
+        <li class="ficha-brief revela" data-retraso="2">
+          <span class="ficha-brief__n">03</span>
+          <h4>Las restricciones</h4>
+          <ul>
+            <li>Fondo azul plano para recortar en OBS.</li>
+            <li>Que se lea en pequeño y en segundos.</li>
+            <li>No tapar el juego.</li>
+            <li>Un mismo estilo en 10 piezas.</li>
+          </ul>
+        </li>
+        <li class="ficha-brief revela">
+          <span class="ficha-brief__n">04</span>
+          <h4>El público</h4>
+          <p>Espectadores jóvenes de streams de juegos y charlas. Miran desde la compu o el celular, muchas veces con el stream de fondo.</p>
+        </li>
+        <li class="ficha-brief revela" data-retraso="1">
+          <span class="ficha-brief__n">05</span>
+          <h4>Los objetivos</h4>
+          <ul>
+            <li>Que el canal se reconozca en un vistazo.</li>
+            <li>Que cada alerta se entienda sin leerla.</li>
+            <li>Que todo el kit se sienta como un mismo lugar.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACTO 2 · EL PROCESO ═══════════════ -->
+  <section class="acto tema-lila" id="acto2" data-acto="1">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">acto 2 · el proceso y la transformación</p>
+        <h2 class="titulo-l"><span class="barrido">el proceso</span></h2>
+        <p class="acto__pregunta revela">¿Cómo pensé y probé la solución?</p>
+        <p class="revela">Estas son las partes del proceso. Toca una para ir directo.</p>
+      </header>
+
+      <nav class="indice revela" aria-label="Partes del proceso">
+        <a href="#mapa"><b>a</b> mapa conceptual</a>
+        <a href="#bocetos"><b>b</b> bocetos</a>
+        <a href="#color"><b>c</b> pruebas de color</a>
+        <a href="#tipografia"><b>d</b> tipografía</a>
+        <a href="#sistema"><b>e</b> sistema de piezas</a>
+      </nav>
+
+      <!-- a · MAPA CONCEPTUAL: el cuarto de Reka -->
+      <div class="parte" id="mapa">
+        <p class="parte__etapa">idear</p>
+        <h3 class="parte__titulo revela"><b>a</b> mapa conceptual</h3>
+        <p class="parte__intro revela">Empecé por la pregunta <em>¿dónde está Reka cuando transmite?</em> La respuesta fue su cuarto. Cada objeto del cuarto podía convertirse en una pieza del kit.</p>
+        <p class="revela pista-oscura">
+          <span class="solo-mouse">Pasa el mouse por cada objeto para ver en qué aviso se convierte.</span>
+          <span class="solo-tactil">Toca cada objeto para ver en qué aviso se convierte.</span>
+        </p>
+        <div class="cuarto revela" data-cuarto>
+          <svg class="cuarto__lineas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="50" y1="50" x2="17" y2="20"/><line x1="50" y1="50" x2="50" y2="14"/><line x1="50" y1="50" x2="83" y2="20"/>
+            <line x1="50" y1="50" x2="17" y2="82"/><line x1="50" y1="50" x2="83" y2="82"/>
+            <line x1="50" y1="50" x2="12" y2="50"/><line x1="50" y1="50" x2="88" y2="50"/><line x1="50" y1="50" x2="50" y2="90"/>
+          </svg>
+          <div class="cuarto__centro"><b>reka</b><span>un cuarto de noche, cálido y tranquilo</span></div>
+          <button type="button" class="objeto-mapa" style="--x:17%;--y:20%" data-dice="Un dulce pequeño y simple. Es un gesto rápido de apoyo."><img src="assets/img/reka/dulce.webp" alt="" width="560" height="400"><small>1 bit</small><b>un dulce</b></button>
+          <button type="button" class="objeto-mapa" style="--x:50%;--y:14%" data-dice="Una lata de soda que burbujea. Más grande y con movimiento propio."><img src="assets/img/reka/lata.webp" alt="" width="352" height="560"><small>100 bits</small><b>una lata de soda</b></button>
+          <button type="button" class="objeto-mapa" style="--x:83%;--y:20%" data-dice="La lámpara de lava brilla. El mayor aporte se siente especial."><img src="assets/img/reka/lampara.webp" alt="" width="373" height="560"><small>1000 bits</small><b>la lámpara de lava</b></button>
+          <button type="button" class="objeto-mapa" style="--x:17%;--y:82%" data-dice="Los audífonos vibran con el sonido cuando alguien se suscribe."><img src="assets/img/reka/audifonos.webp" alt="" width="560" height="515"><small>suscripción</small><b>los audífonos</b></button>
+          <button type="button" class="objeto-mapa" style="--x:83%;--y:82%" data-dice="Un avión de papel vuela con su estela para cada nuevo seguidor."><img src="assets/img/reka/avion.webp" alt="" width="560" height="442"><small>seguidor</small><b>un avión de papel</b></button>
+          <span class="chip-mapa" style="--x:12%;--y:50%">la planta → marcos</span>
+          <span class="chip-mapa" style="--x:88%;--y:50%">el escritorio → escenas</span>
+          <span class="chip-mapa" style="--x:50%;--y:90%">la ventana · día = empieza · noche = termina</span>
+        </div>
+        <p class="cuarto__nota" aria-live="polite">cada objeto del cuarto se vuelve un aviso</p>
+
+        <div class="dos dos--insight">
+          <blockquote class="nota-cinta revela">
+            <p>“El stream es el cuarto de Reka. Cada objeto del cuarto se vuelve un aviso.”</p>
+            <cite>la idea que ordenó todo el kit</cite>
+          </blockquote>
+          <p class="revela" data-retraso="1">Así las alertas dejan de ser íconos genéricos, como estrellas o corazones, y pasan a ser <b>cosas que Reka tendría a mano</b>. El espectador siente que entra a un lugar y no a una plantilla.</p>
+        </div>
+      </div>
+
+      <!-- b · BOCETOS -->
+      <div class="parte" id="bocetos">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>b</b> bocetos</h3>
+        <p class="parte__intro revela">Primero resolví todo a lápiz, la composición del cuarto y la silueta de cada objeto. Si una forma no se entendía en blanco y negro, no iba a funcionar a color.</p>
+        <button type="button" class="libreta revela" data-ampliar="assets/img/reka/bocetos.jpg" data-cursor="ampliar" aria-label="Ampliar los bocetos del cuaderno">
+          <img src="assets/img/reka/bocetos.jpg" alt="Cuaderno abierto con bocetos a lápiz. A la izquierda el cuarto con el nombre Reka; a la derecha el dulce, la lata, la lámpara, los audífonos, el avión y un marco con una enredadera" loading="lazy" width="1600" height="1198">
+          <span class="mockup__lupa" aria-hidden="true">ampliar +</span>
+        </button>
+        <ol class="hallazgos hallazgos--3">
+          <li class="papel revela"><b>01</b><strong>El cuarto.</strong> El nombre a la izquierda y el cuarto a la derecha, con espacio libre para leer “empezando pronto” sin ruido.</li>
+          <li class="papel revela" data-retraso="1"><b>02</b><strong>Los objetos.</strong> Un objeto por alerta, con contorno grueso y líneas de movimiento.</li>
+          <li class="papel revela" data-retraso="2"><b>03</b><strong>Los marcos.</strong> La enredadera crece solo en las esquinas y nunca sobre el juego.</li>
+        </ol>
+      </div>
+
+      <!-- c · PRUEBAS DE COLOR -->
+      <div class="parte" id="color">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>c</b> pruebas de color</h3>
+        <p class="parte__intro revela">Probé cuatro paletas sobre las mismas dos alertas. La prueba clave fue ponerlas encima del azul de recorte y de juegos claros y oscuros.</p>
+        <div class="descartes descartes--4">
+          <article class="descarte revela">
+            <div class="descarte__img"><img src="assets/img/reka/color-pastel.jpg" alt="Prueba en tonos pastel" loading="lazy"></div>
+            <h4>Pastel</h4><p>Se veía tierna, pero sobre juegos claros perdía contraste y desaparecía.</p>
+          </article>
+          <article class="descarte revela" data-retraso="1">
+            <div class="descarte__img"><img src="assets/img/reka/color-rojo-amarillo.jpg" alt="Prueba en rojo y amarillo" loading="lazy"></div>
+            <h4>Rojo y amarillo</h4><p>Demasiado agresiva para un canal tranquilo. Recordaba a comida rápida.</p>
+          </article>
+          <article class="descarte revela" data-retraso="2">
+            <div class="descarte__img"><img src="assets/img/reka/color-azul-violeta.jpg" alt="Prueba en azul y violeta" loading="lazy"></div>
+            <h4>Azul y violeta</h4><p>Se mezclaba con el azul de recorte y OBS borraba partes de la ilustración.</p>
+          </article>
+          <article class="descarte descarte--elegida revela" data-retraso="3">
+            <div class="descarte__img"><img src="assets/img/reka/color-naranja-lima.jpg" alt="Prueba elegida en naranja, lima y ciruela" loading="lazy"></div>
+            <h4>Naranja, lima y ciruela</h4><p>Cálida como la lámpara del cuarto, sin azules y con contraste sobre cualquier juego.</p>
+          </article>
+        </div>
+        <p class="mini-titulo revela">la paleta final del kit</p>
+        <p class="revela"><span class="solo-mouse">Haz clic en un color para copiar su código.</span><span class="solo-tactil">Toca un color para copiar su código.</span></p>
+        <!-- Estos colores son del KIT REKA (contenido del proyecto), no de la web -->
+        <ul class="paleta">
+          <li style="--c:#F47B2A" data-hex="#F47B2A" class="claro"><b>Naranja lámpara</b><span>protagonista, calidez y energía</span></li>
+          <li style="--c:#A9CF5E" data-hex="#A9CF5E" class="claro"><b>Lima planta</b><span>acento, la planta y los detalles</span></li>
+          <li style="--c:#3E1733" data-hex="#3E1733"><b>Ciruela noche</b><span>contornos y fondos, reemplaza al negro</span></li>
+          <li style="--c:#FAE8C3" data-hex="#FAE8C3" class="claro"><b>Crema papel</b><span>textos y borde que separa del fondo</span></li>
+          <li style="--c:#086CFC" data-hex="#086CFC"><b>Azul de recorte</b><span>solo técnico, OBS lo vuelve transparente</span></li>
+        </ul>
+      </div>
+
+      <!-- d · TIPOGRAFÍA -->
+      <div class="parte" id="tipografia">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>d</b> tipografía</h3>
+        <p class="parte__intro revela">El nombre aparece en todas las piezas, a veces muy chico. Probé cuatro caminos para el rótulo de Reka.</p>
+        <div class="descartes">
+          <article class="descarte revela">
+            <div class="descarte__img descarte__img--tipo"><img src="assets/img/reka/tipo-pixelada.jpg" alt="Reka en letra pixelada" loading="lazy"></div>
+            <h4>Pixelada</h4><p>Dice “gamer” al instante, pero es un cliché y en tamaño chico los píxeles se rompen.</p>
+          </article>
+          <article class="descarte revela" data-retraso="1">
+            <div class="descarte__img descarte__img--tipo"><img src="assets/img/reka/tipo-manuscrita.jpg" alt="Reka en letra manuscrita" loading="lazy"></div>
+            <h4>Manuscrita</h4><p>Cercana y suave, pero ilegible en la pestaña pequeña del overlay de cámara.</p>
+          </article>
+          <article class="descarte revela" data-retraso="2">
+            <div class="descarte__img descarte__img--tipo"><img src="assets/img/reka/tipo-geometrica.jpg" alt="Reka en letra geométrica rígida" loading="lazy"></div>
+            <h4>Geométrica rígida</h4><p>Muy legible, pero fría y recta. No combinaba con las líneas curvas de la ilustración.</p>
+          </article>
+        </div>
+        <div class="tipo-elegida revela">
+          <img src="assets/img/reka/tipo-reka.jpg" alt="Rótulo final: REKA en letra redondeada, gruesa, color crema con contorno ciruela y sombra naranja, y debajo EMPEZANDO PRONTO" loading="lazy">
+          <div>
+            <p class="mini-titulo">elegida</p>
+            <h4>Redondeada, gruesa y con doble contorno</h4>
+            <p>Tiene la misma curva que los objetos ilustrados y se lee incluso a 30 px. Los subtítulos van en una sans en mayúsculas para no competir con el nombre.</p>
+            <ul class="capas-letra">
+              <li><i style="--c:#FAE8C3"></i>relleno crema, la letra</li>
+              <li><i style="--c:#3E1733"></i>contorno ciruela, la separa del fondo</li>
+              <li><i style="--c:#F47B2A"></i>sombra naranja, volumen y calidez</li>
+            </ul>
+          </div>
+        </div>
+        <!-- prueba de escala hecha en HTML: el mismo rótulo a tres tamaños -->
+        <div class="escala revela">
+          <span class="escala__reka" style="--t:clamp(46px,7vw,104px)">REKA<small>pantallas</small></span>
+          <span class="escala__reka" style="--t:clamp(28px,3.6vw,50px)">REKA<small>overlay</small></span>
+          <span class="escala__reka" style="--t:clamp(18px,2vw,28px)">REKA<small>cámara</small></span>
+          <p>Prueba de escala. El rótulo debía funcionar desde la pantalla completa hasta la pestaña de la cámara.</p>
+        </div>
+      </div>
+
+      <!-- e · SISTEMA DE PIEZAS -->
+      <div class="parte" id="sistema">
+        <p class="parte__etapa">definir</p>
+        <h3 class="parte__titulo revela"><b>e</b> sistema de piezas</h3>
+        <p class="parte__intro revela">Con la idea, el color y la letra definidos, armé un sistema. Las mismas cinco reglas se repiten en todos los overlays.</p>
+        <div class="sistema">
+          <button type="button" class="sistema__img revela" data-ampliar="assets/img/reka/sistema.jpg" data-cursor="ampliar" aria-label="Ampliar el marco del sistema">
+            <img src="assets/img/reka/sistema.jpg" alt="Marco del overlay con cinco notas: pestaña con el nombre, la planta solo en esquinas, hueco de recorte para la cámara, rayas de energía y doble borde naranja y lima" loading="lazy" width="1600" height="964">
+          </button>
+          <ol class="reglas revela" data-retraso="1">
+            <li><b>1</b>Pestaña con el nombre</li>
+            <li><b>2</b>La planta del cuarto, solo en las esquinas</li>
+            <li><b>3</b>Hueco de recorte para la cámara</li>
+            <li><b>4</b>Rayas como detalle de energía</li>
+            <li><b>5</b>Doble borde naranja y lima</li>
+          </ol>
+        </div>
+        <p class="mini-titulo revela">jerarquía de bits · más bits, más tamaño, más brillo</p>
+        <div class="jerarquia">
+          <article class="revela"><div class="jerarquia__img"><img src="assets/img/reka/dulce.webp" alt="Dulce" style="--s:.45" loading="lazy"></div><small>1</small><h4>Un dulce</h4><p>Pequeño y simple. Un gesto rápido de apoyo.</p></article>
+          <article class="revela" data-retraso="1"><div class="jerarquia__img"><img src="assets/img/reka/lata.webp" alt="Lata de soda" style="--s:.7" loading="lazy"></div><small>100</small><h4>Una lata que burbujea</h4><p>Más grande y con movimiento propio.</p></article>
+          <article class="revela" data-retraso="2"><div class="jerarquia__img jerarquia__img--brilla"><img src="assets/img/reka/lampara.webp" alt="Lámpara de lava" style="--s:.95" loading="lazy"></div><small>1000</small><h4>La lámpara que brilla</h4><p>El objeto con luz y destellos. El mayor aporte se siente especial.</p></article>
+        </div>
+        <p class="revela">El espectador entiende el valor del aporte sin leer el número.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACTO 3 · EL DESENLACE ═══════════════ -->
+  <section class="acto tema-indigo acto--final" id="acto3" data-acto="2">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">acto 3 · el desenlace y el impacto</p>
+        <h2 class="titulo-l"><span class="barrido">el resultado</span></h2>
+        <p class="acto__pregunta revela">¿Cuál fue el resultado final y cómo funciona en la vida real?</p>
+      </header>
+
+      <!-- Pantallas de inicio y cierre: el mismo cuarto de día y de noche -->
+      <div class="pantallas">
+        <div class="monitor revela">
+          <div class="monitor__pantalla">
+            <video class="monitor__video activo" data-pantalla="inicio" src="assets/video/reka-pantalla-inicio.mp4" poster="assets/img/posters/reka-pantalla-inicio.jpg" muted loop playsinline preload="metadata" aria-label="Pantalla de inicio: empezando pronto"></video>
+            <video class="monitor__video" data-pantalla="cierre" src="assets/video/reka-pantalla-cierre.mp4" poster="assets/img/posters/reka-pantalla-cierre.jpg" muted loop playsinline preload="metadata" aria-label="Pantalla de cierre: nos vemos en el próximo stream"></video>
+          </div>
+          <span class="monitor__pie" aria-hidden="true"></span>
+        </div>
+        <div class="pantallas__texto revela" data-retraso="1">
+          <p class="mini-titulo">pantallas de inicio y cierre</p>
+          <div class="interruptor" role="group" aria-label="Elegir pantalla">
+            <button type="button" data-ver="inicio" aria-pressed="true">☀ empezando pronto</button>
+            <button type="button" data-ver="cierre" aria-pressed="false">☾ nos vemos</button>
+          </div>
+          <p data-texto-pantalla><b>Empezando pronto.</b> Atardecer en la ventana y el monitor encendido. El stream está por comenzar.</p>
+          <p class="pista">Es el mismo cuarto. Solo cambia la ventana, el día dice que empieza y la noche que termina.</p>
+        </div>
+      </div>
+
+      <!-- SIMULADOR: así se ve en vivo -->
+      <div class="en-vivo">
+        <div class="revela">
+          <p class="mini-titulo">así se ve en vivo · simulación</p>
+          <h3 class="subtitulo">Pruébalo en vivo</h3>
+          <p>Cambia entre el overlay de juego y el de charla, y lanza cada alerta como si alguien te apoyara en el stream.</p>
+        </div>
+        <div class="reproductor-stream revela" data-simulador>
+          <div class="rs__barra"><span class="rs__vivo">en vivo</span><b>reka</b><span class="rs__titulo">jugando y charlando un rato</span><span class="rs__espect">● <span data-espect>128</span> espectadores</span></div>
+          <div class="rs__cuerpo">
+            <div class="rs__escena" data-modo="juego">
+              <div class="rs__juego" aria-hidden="true"><i class="rs__sol"></i><i class="rs__cerro rs__cerro--1"></i><i class="rs__cerro rs__cerro--2"></i><span class="rs__etiqueta">juego de referencia</span></div>
+              <img class="rs__overlay rs__overlay--juego" src="assets/img/reka/overlay-juego.webp" alt="Overlay de juego: cámara pequeña en la esquina y barra de metas" width="1376" height="768">
+              <img class="rs__overlay rs__overlay--charla" src="assets/img/reka/overlay-charla.webp" alt="Overlay de charla: cámara grande y panel crema para el chat" width="1376" height="768">
+              <div class="rs__alerta" aria-live="polite"><img alt=""><span></span></div>
+            </div>
+            <aside class="rs__chat" aria-label="Chat del stream (simulado)">
+              <p class="rs__chat-titulo">chat del stream</p>
+              <ul data-chat>
+                <li><b style="color:#F47B2A">mateo_lp</b> holaaa reka</li>
+                <li><b style="color:#A9CF5E">sofi.plays</b> me encanta la lámpara del fondo</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        <div class="controles-sim revela" data-retraso="1">
+          <div class="interruptor" role="group" aria-label="Elegir overlay">
+            <button type="button" data-modo-sim="juego" aria-pressed="true">modo juego</button>
+            <button type="button" data-modo-sim="charla" aria-pressed="false">modo charla</button>
+          </div>
+          <div class="lanzar" role="group" aria-label="Lanzar una alerta">
+            <button type="button" data-alerta="1bit"><img src="assets/img/reka/dulce.webp" alt="" width="40" height="29">1 bit</button>
+            <button type="button" data-alerta="100bits"><img src="assets/img/reka/lata.webp" alt="" width="25" height="40">100 bits</button>
+            <button type="button" data-alerta="1000bits"><img src="assets/img/reka/lampara.webp" alt="" width="27" height="40">1000 bits</button>
+            <button type="button" data-alerta="suscripcion"><img src="assets/img/reka/audifonos.webp" alt="" width="40" height="37">suscripción</button>
+            <button type="button" data-alerta="seguidor"><img src="assets/img/reka/avion.webp" alt="" width="40" height="32">seguidor</button>
+          </div>
+        </div>
+        <p class="pista revela">Overlay de juego. La cámara se reduce a una esquina y una barra delgada muestra las metas, así el centro queda libre para jugar. En el overlay de charla la cámara es protagonista y un panel crema guarda el chat.</p>
+      </div>
+
+      <!-- LAS ALERTAS ANIMADAS (videos sin el fondo azul) -->
+      <div class="alertas">
+        <header class="revela">
+          <p class="mini-titulo">las alertas · cinco objetos, cinco avisos</p>
+          <h3 class="subtitulo">Mira las animaciones</h3>
+          <p class="pista"><span class="solo-mouse">Pasa el mouse para verlas moverse. Haz clic para escucharlas.</span><span class="solo-tactil">Se mueven al aparecer en pantalla. Toca una para escucharla.</span></p>
+        </header>
+        <div class="alertas__grid">
+          <button type="button" class="alerta revela" data-video-alerta>
+            <video src="assets/video/reka-1bit.mp4" poster="assets/img/posters/reka-1bit.jpg" muted loop playsinline preload="none" aria-label="Alerta de 1 bit: el dulce flota y se balancea"></video>
+            <span class="alerta__info"><small>1 bit</small>El dulce flota y se balancea</span><span class="alerta__sonido" aria-hidden="true">🔈</span>
+          </button>
+          <button type="button" class="alerta revela" data-retraso="1" data-video-alerta>
+            <video src="assets/video/reka-100bits.mp4" poster="assets/img/posters/reka-100bits.jpg" muted loop playsinline preload="none" aria-label="Alerta de 100 bits: la lata burbujea y brilla"></video>
+            <span class="alerta__info"><small>100 bits</small>La lata burbujea y brilla</span><span class="alerta__sonido" aria-hidden="true">🔈</span>
+          </button>
+          <button type="button" class="alerta revela" data-retraso="2" data-video-alerta>
+            <video src="assets/video/reka-1000bits.mp4" poster="assets/img/posters/reka-1000bits.jpg" muted loop playsinline preload="none" aria-label="Alerta de 1000 bits: la lava se mueve y la luz late"></video>
+            <span class="alerta__info"><small>1000 bits</small>La lava se mueve y la luz late</span><span class="alerta__sonido" aria-hidden="true">🔈</span>
+          </button>
+          <button type="button" class="alerta revela" data-video-alerta>
+            <video src="assets/video/reka-suscripcion.mp4" poster="assets/img/posters/reka-suscripcion.jpg" muted loop playsinline preload="none" aria-label="Alerta de suscripción: los audífonos vibran con el sonido"></video>
+            <span class="alerta__info"><small>suscripción</small>Los audífonos vibran con el sonido</span><span class="alerta__sonido" aria-hidden="true">🔈</span>
+          </button>
+          <button type="button" class="alerta revela" data-retraso="1" data-video-alerta>
+            <video src="assets/video/reka-seguidor.mp4" poster="assets/img/posters/reka-seguidor.jpg" muted loop playsinline preload="none" aria-label="Alerta de seguidor: el avión vuela con su estela"></video>
+            <span class="alerta__info"><small>seguidor</small>El avión vuela con su estela</span><span class="alerta__sonido" aria-hidden="true">🔈</span>
+          </button>
+          <div class="alerta alerta--nota papel revela" data-retraso="2">
+            <p class="mini-titulo">dato técnico</p>
+            <p>En OBS cada alerta va sobre el azul de recorte. Aquí lo quité para que veas solo el objeto.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMPACTO -->
+      <div class="impacto-reka">
+        <p class="mini-titulo revela">el impacto</p>
+        <ul class="lecciones__lista lecciones__lista--3">
+          <li class="revela"><b>01</b><h3>un solo lugar</h3><p>Las 10 piezas comparten paleta, trazo y objetos. El canal se reconoce en cualquier escena.</p></li>
+          <li class="revela" data-retraso="1"><b>02</b><h3>sin leer</h3><p>Cada alerta es un objeto claro con su propio movimiento. Se entiende en uno o dos segundos.</p></li>
+          <li class="revela" data-retraso="2"><b>03</b><h3>listo para usar</h3><p>Fondos de recorte y formatos para OBS. Cambiar de juego o de escena no rompe la identidad.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECCIÓN ELECTIVA · B · GESTIÓN DE RESTRICCIONES ═══════════ -->
+  <section class="acto tema-petroleo" id="limites" data-acto="3">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">sección electiva b · gestión de restricciones</p>
+        <h2 class="titulo-l"><span class="barrido">los límites</span></h2>
+        <p class="acto__pregunta revela">¿Cómo convertí cada límite en una decisión?</p>
+        <p class="revela">Un kit de stream tiene reglas técnicas que no se negocian. Así resolví cada una.</p>
+      </header>
+      <ol class="limites">
+        <li class="revela"><span class="limites__n">01</span><div><h3>Fondo azul de recorte</h3><small>OBS borra ese color</small></div><p>Paleta sin azules y un borde crema grueso alrededor de cada objeto. El recorte queda limpio, sin bordes sucios.</p></li>
+        <li class="revela"><span class="limites__n">02</span><div><h3>Se ve en pequeño</h3><small>celular, esquina de la pantalla</small></div><p>Un solo objeto por alerta, siluetas simples y contorno grueso. El rótulo se probó hasta 30 px.</p></li>
+        <li class="revela"><span class="limites__n">03</span><div><h3>Dura pocos segundos</h3><small>la alerta entra y sale</small></div><p>Cada objeto tiene un movimiento propio y obvio. El avión vuela, la lata burbujea y los audífonos vibran.</p></li>
+        <li class="revela"><span class="limites__n">04</span><div><h3>No tapar el juego</h3><small>el contenido manda</small></div><p>En modo juego la cámara va a una esquina y la barra de metas es delgada. El centro queda libre y la planta solo crece en las esquinas.</p></li>
+        <li class="revela"><span class="limites__n">05</span><div><h3>10 piezas, una sola diseñadora</h3><small>tiempo limitado</small></div><p>Un sistema reutilizable con el mismo marco, la misma pestaña y cinco colores. Diseñar una pieza nueva es combinar, no empezar de cero.</p></li>
+        <li class="revela"><span class="limites__n">06</span><div><h3>Dos formatos</h3><small>16:9 escenas · 1:1 alertas</small></div><p>Las escenas se componen con el cuarto a un lado. Las alertas van centradas y con aire para animarse sin cortarse.</p></li>
+      </ol>
+      <div class="lecciones__final revela">
+        <p>¿Seguimos?</p>
+        <div class="lecciones__botones">
+          <a class="boton boton--lleno" href="estudio-de-caso.html">estudio de caso 1 · balas perdidas <span data-flecha></span></a>
+          <a class="boton" href="index.html#trabajos">ver mis trabajos</a>
+          <a class="boton" href="index.html"><span data-flecha="180"></span> volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Visor de imágenes ampliadas: se cierra tocando en cualquier parte, con el botón o con Esc -->
+<dialog class="lightbox" aria-label="Imagen ampliada">
+  <img alt="">
+  <button type="button" class="lightbox__cerrar">cerrar <span aria-hidden="true">✕</span></button>
+  <p class="lightbox__pista">toca en cualquier parte para cerrar</p>
+</dialog>
+
+<script src="js/datos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/caso2.js"></script>
+</body>
+</html>
