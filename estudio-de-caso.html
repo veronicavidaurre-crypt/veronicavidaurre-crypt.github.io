@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Balas perdidas · estudio de caso · veruzh</title>
+  <meta name="description" content="Estudio de caso: rediseño de la portada del álbum Balas perdidas de Morat, por Verónica Vidaurre (veruzh).">
+  <meta name="theme-color" content="#2B214A">
+  <link rel="icon" href="assets/img/logo/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/caso.css">
+</head>
+<!--
+  ESTUDIO DE CASO · estructura (pedida en el PDF de requisitos)
+    · Ficha técnica de cabecera
+    · Acto 1  El conflicto y el brief      → ¿Cuál era la necesidad?
+    · Acto 2  El proceso y transformación  → ¿Cómo pensé y probé la solución?
+    · Acto 3  El desenlace y el impacto    → ¿Cuál fue el resultado y cómo funciona en la vida real?
+    · Sección electiva E · Postmortem (lecciones aprendidas)
+  Cada sección tiene su propio color de la paleta (clases tema-*).
+-->
+<body data-pagina="caso" class="tema-rosa">
+<main class="caso">
+
+  <!-- ═══ PORTADA DEL CASO + FICHA TÉCNICA ═══ -->
+  <header class="caso-hero tema-indigo">
+    <div class="contenedor caso-hero__grid">
+      <div class="caso-hero__texto">
+        <nav class="migas" aria-label="Estás aquí">
+          <a href="index.html">inicio</a><span aria-hidden="true">/</span><span aria-current="page">estudio de caso</span>
+        </nav>
+        <p class="etiqueta">03 — estudio de caso</p>
+        <h1 class="titulo-xl caso-hero__titulo"><span class="barrido">balas</span> <span class="barrido">perdidas</span></h1>
+        <p class="caso-hero__bajada revela">Rediseño de la portada del álbum de Morat. <em>Cada canción es un disparo y cada foto un recuerdo.</em></p>
+      </div>
+      <div class="revela" data-retraso="1">
+        <figure class="polaroid polaroid--hero">
+          <img src="assets/img/caso/portada.jpg" alt="Portada rediseñada de Balas perdidas: una polaroid con un ramo de flores sobre fondo morado" width="1594" height="1358">
+          <figcaption>balas perdidas · Morat</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Ficha técnica de cabecera (requisito 3 del PDF) -->
+    <dl class="contenedor ficha-caso revela">
+      <div><dt>Proyecto</dt><dd>Rediseño de portada y contraportada de <em>Balas perdidas</em>, Morat (2018)</dd></div>
+      <div><dt>Contexto</dt><dd>Proyecto académico · materia Diseño Contexto</dd></div>
+      <div><dt>Año</dt><dd>2026</dd></div>
+      <div><dt>Disciplina</dt><dd>Diseño editorial e ilustración digital</dd></div>
+      <div><dt>Herramientas</dt><dd>Canva, Adobe Photoshop y Adobe Illustrator</dd></div>
+      <div><dt>Mi rol</dt><dd>Investigación, concepto, bocetos, ilustración y diseño final</dd></div>
+    </dl>
+  </header>
+
+  <!-- ═══ BARRA DE ACTOS (se queda fija arriba y marca dónde estás) ═══ -->
+  <nav class="actos" aria-label="Partes del estudio de caso">
+    <div class="actos__pastilla">
+      <a href="#acto1"><b>1</b> brief</a>
+      <a href="#acto2"><b>2</b> proceso</a>
+      <a href="#acto3"><b>3</b> resultado</a>
+      <a href="#lecciones"><b>4</b> lecciones</a>
+      <span class="actos__barra" aria-hidden="true"><span></span></span>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ ACTO 1 · EL CONFLICTO Y EL BRIEF ═══════════════ -->
+  <section class="acto tema-rosa" id="acto1" data-acto="0">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">acto 1 · el conflicto y el brief</p>
+        <h2 class="titulo-l"><span class="barrido">el brief</span></h2>
+        <p class="acto__pregunta revela">¿Cuál era la necesidad?</p>
+      </header>
+
+      <div class="disco">
+        <div class="disco__texto revela">
+          <h3 class="subtitulo">El disco</h3>
+          <p><em>Balas perdidas</em> es el segundo álbum de estudio de Morat, banda colombiana de folk-pop nacida en Bogotá. Salió en 2018 con 12 canciones, entre ellas <em>Besos en guerra</em>, <em>Cuando nadie ve</em>, <em>Punto y aparte</em> y <em>El embrujo</em>.</p>
+          <ul class="chips">
+            <li>2018</li><li>12 canciones</li><li>folk-pop</li><li>nominado al Latin Grammy</li>
+          </ul>
+          <h3 class="subtitulo subtitulo--espacio">¿Por qué este disco?</h3>
+          <ul class="lista-puntos">
+            <li><b>Amor y desamor agridulce:</b> canciones que se sienten muy personales.</li>
+            <li><b>Un nombre con historia:</b> detrás de “balas perdidas” hay una idea poética muy fuerte.</li>
+            <li><b>Una oportunidad:</b> la portada original no termina de contar esa idea de manera más humana.</li>
+          </ul>
+        </div>
+        <div class="revela" data-retraso="1">
+          <figure class="polaroid polaroid--original">
+            <img src="assets/img/caso/portada-original.jpg" alt="Portada original de Balas perdidas: un ramo de flores sobre fondo negro" width="576" height="576" loading="lazy">
+            <figcaption>la portada original</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- EL BRIEF: cada tarjeta responde una pregunta del PDF -->
+      <h3 class="subtitulo revela">El brief, punto por punto</h3>
+      <ol class="brief">
+        <li class="ficha-brief revela">
+          <span class="ficha-brief__n">01</span>
+          <h4>La necesidad</h4>
+          <p>La portada original muestra un ramo de flores sobre fondo negro. Es bonita, pero no explica la idea que hay detrás del nombre. El disco necesitaba una imagen que contara su concepto.</p>
+        </li>
+        <li class="ficha-brief revela" data-retraso="1">
+          <span class="ficha-brief__n">02</span>
+          <h4>El contexto</h4>
+          <p>Proyecto académico de la materia Diseño Contexto. El encargo era elegir un álbum que ya existe y rediseñar su portada y su contraportada.</p>
+        </li>
+        <li class="ficha-brief revela" data-retraso="2">
+          <span class="ficha-brief__n">03</span>
+          <h4>Las restricciones</h4>
+          <ul>
+            <li>Mantener el título del disco y el logo de Morat.</li>
+            <li>Poner las 12 canciones en la contraportada.</li>
+            <li>Formato cuadrado, para CD y vinilo.</li>
+            <li>No mostrar armas ni violencia, aunque el título hable de balas.</li>
+          </ul>
+        </li>
+        <li class="ficha-brief revela">
+          <span class="ficha-brief__n">04</span>
+          <h4>El público</h4>
+          <p>Oyentes de Morat, sobre todo jóvenes, que viven sus canciones de amor y desamor como recuerdos propios.</p>
+        </li>
+        <li class="ficha-brief revela" data-retraso="1">
+          <span class="ficha-brief__n">05</span>
+          <h4>Los objetivos</h4>
+          <ul>
+            <li>Convertir la idea poética del nombre en una imagen.</li>
+            <li>Despertar nostalgia y ternura, no tristeza.</li>
+            <li>Que se entienda en pequeño (en Spotify) y en grande (en un vinilo).</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACTO 2 · EL PROCESO ═══════════════ -->
+  <section class="acto tema-lila" id="acto2" data-acto="1">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">acto 2 · el proceso y la transformación</p>
+        <h2 class="titulo-l"><span class="barrido">el proceso</span></h2>
+        <p class="acto__pregunta revela">¿Cómo pensé y probé la solución?</p>
+        <p class="revela">Seguí las cinco etapas del <em>design thinking</em>. Estas son las partes del proceso. Toca una para ir directo.</p>
+      </header>
+
+      <!-- índice del acto 2: lleva directo a cada parte -->
+      <nav class="indice revela" aria-label="Partes del proceso">
+        <a href="#investigacion"><b>a</b> investigación</a>
+        <a href="#mapa"><b>b</b> mapa conceptual</a>
+        <a href="#bocetos"><b>c</b> bocetos iniciales</a>
+        <a href="#descartadas"><b>d</b> ideas descartadas</a>
+        <a href="#tipografia"><b>e</b> decisiones tipográficas</a>
+        <a href="#color"><b>f</b> pruebas de color</a>
+        <a href="#evaluar"><b>g</b> evaluación</a>
+      </nav>
+
+      <!-- a · INVESTIGACIÓN (empatizar + definir) -->
+      <div class="parte" id="investigacion">
+        <p class="parte__etapa">empatizar y definir</p>
+        <h3 class="parte__titulo revela"><b>a</b> investigación</h3>
+        <div class="dos">
+          <div class="revela">
+            <p>Investigué entrevistas y publicaciones de Morat. La banda cuenta que a veces escribe una canción pensando en una persona, pero termina <mark>llegando a otras</mark>, y a cada quien le llega distinto.</p>
+            <p>Por eso el disco se llama <em>Balas perdidas</em>. Son canciones que van y vienen sin avisar y alcanzan a quien no esperaban.</p>
+          </div>
+          <blockquote class="nota-cinta revela" data-retraso="1">
+            <p>¿Para quién es una canción?</p>
+            <cite>para quien la escribió… y para quien la necesita</cite>
+          </blockquote>
+        </div>
+        <h4 class="mini-titulo revela">lo que descubrí</h4>
+        <ol class="hallazgos">
+          <li class="papel revela"><b>01</b>Una canción tiene destinatarios inesperados.</li>
+          <li class="papel revela" data-retraso="1"><b>02</b>Cada oyente la vive desde su propia historia.</li>
+          <li class="papel revela" data-retraso="2"><b>03</b>El disco habla de amor, desamor y nostalgia.</li>
+          <li class="papel revela" data-retraso="3"><b>04</b>Las canciones se atan a momentos y personas. Se vuelven recuerdos.</li>
+        </ol>
+        <div class="dos dos--insight">
+          <div class="revela">
+            <p class="mini-titulo">insight</p>
+            <p class="insight">Una canción, igual que una fotografía, se convierte en un recuerdo que cada persona guarda a su manera.</p>
+          </div>
+          <div class="reto revela" data-retraso="1">
+            <p class="mini-titulo">reto de diseño</p>
+            <p>¿Cómo podríamos crear una imagen que muestre que las canciones de <em>Balas perdidas</em> llegan a cada persona de forma distinta y se vuelven recuerdos?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- b · MAPA CONCEPTUAL (idear) -->
+      <div class="parte" id="mapa">
+        <p class="parte__etapa">idear</p>
+        <h3 class="parte__titulo revela"><b>b</b> mapa conceptual</h3>
+        <p class="revela">
+          <span class="solo-mouse">Pasa el mouse por cada idea para ver con qué se conecta.</span>
+          <span class="solo-tactil">Toca cada idea para ver con qué se conecta.</span>
+        </p>
+        <div class="mapa revela" data-mapa>
+          <svg class="mapa__lineas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <!-- los nodos los coloca caso.js -->
+        </div>
+        <p class="mapa__nota" aria-live="polite">conexión clave: la bala dispara… y la cámara también</p>
+
+        <div class="concepto">
+          <p class="mini-titulo revela">concepto central</p>
+          <p class="concepto__frase revela">disparos que se vuelven recuerdos</p>
+          <ol class="subconceptos">
+            <li class="papel revela"><small>sub-concepto 1</small><b>Disparo</b>La cámara reemplaza al arma. Dispara fotos en vez de balas.</li>
+            <li class="papel revela" data-retraso="1"><small>sub-concepto 2</small><b>Recuerdo</b>La polaroid guarda el momento, como una canción guarda una historia.</li>
+            <li class="papel revela" data-retraso="2"><small>sub-concepto 3</small><b>Doble realidad</b>La flor dentro del marco es el recuerdo. Afuera, es la vida real.</li>
+            <li class="papel revela" data-retraso="3"><small>sub-concepto 4</small><b>Melancolía</b>El morado es lo que fue y todavía se extraña.</li>
+          </ol>
+        </div>
+
+        <!-- otras herramientas creativas de la etapa idear -->
+        <div class="moodboard">
+          <div class="moodboard__texto revela">
+            <p class="mini-titulo">herramienta creativa · moodboard</p>
+            <p>Estas referencias definieron la atmósfera. Fotografía instantánea, flores ilustradas, papel envejecido, atardeceres y tonos violeta y durazno.</p>
+            <ul class="chips"><li>nostalgia</li><li>atardecer</li><li>lo hecho a mano</li><li>recuerdo</li></ul>
+          </div>
+          <div class="moodboard__tablero">
+            <figure class="polaroid revela" style="--giro:-5deg"><img src="assets/img/caso/mood-atardecer.jpg" alt="Referencia: atardecer violeta y durazno" loading="lazy"><figcaption>atardecer</figcaption></figure>
+            <figure class="polaroid revela" data-retraso="1" style="--giro:4deg"><img src="assets/img/caso/mood-ilustracion.jpg" alt="Referencia de ilustración con luz cálida" loading="lazy"><figcaption>ilustración</figcaption></figure>
+            <img class="moodboard__flor flotar" src="assets/img/caso/flor.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+        </div>
+
+        <div class="herramienta">
+          <p class="mini-titulo revela">herramienta creativa · SCAMPER aplicado a la bala perdida</p>
+          <p class="revela">
+            <span class="solo-mouse">Pasa el mouse por cada letra para darla vuelta.</span>
+            <span class="solo-tactil">Toca cada letra para darla vuelta.</span>
+          </p>
+          <ul class="scamper"><!-- tarjetas creadas por caso.js --></ul>
+        </div>
+      </div>
+
+      <!-- c · BOCETOS INICIALES (prototipar): el bloc que pasa hojas -->
+      <div class="parte" id="bocetos">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>c</b> bocetos iniciales</h3>
+        <p class="parte__intro revela">Probé tres ideas a lápiz y después a color. Pasa las hojas del bloc para verlas. La segunda, la polaroid, fue la elegida.</p>
+
+        <div class="bloc revela" data-bloc>
+          <!-- Cada hoja se da vuelta cuando su casilla (checkbox) se marca.
+               Las casillas están escondidas; las marcan los botones, las
+               flechas del teclado o el deslizamiento con el dedo.        -->
+          <input class="bloc__casilla" type="checkbox" id="hoja-1" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-2" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-3" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-4" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-5" tabindex="-1" aria-hidden="true">
+
+          <div class="bloc__marco" data-cursor="pasa la hoja">
+            <div class="bloc__libreta">
+              <div class="bloc__espiral" aria-hidden="true"></div>
+
+              <!-- HOJA 1: tapa del bloc -->
+              <div class="bloc__hoja" id="h1">
+                <div class="bloc__cara bloc__cara--frente bloc__tapa">
+                  <img src="assets/img/caso/flor.webp" alt="" class="bloc__flor">
+                  <p class="bloc__tapa-titulo">bocetos</p>
+                  <p class="bloc__tapa-sub">balas perdidas · proceso</p>
+                  <p class="bloc__tapa-pista"><span class="solo-mouse">haz clic o arrastra de lado para pasar la hoja</span><span class="solo-tactil">desliza con el dedo para pasar la hoja</span></p>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <!-- HOJA 2: idea 1, ramo -->
+              <div class="bloc__hoja" id="h2">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">idea 1 · el ramo <span>flores atadas con una curita</span></p>
+                  <div class="bloc__par">
+                    <figure><img src="assets/img/caso/sketch-ramo.jpg" alt="Boceto a lápiz del ramo" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/caso/final-ramo.jpg" alt="Ilustración del ramo a color" loading="lazy"><figcaption>prueba a color</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <!-- HOJA 3: idea 2, polaroid (la elegida) -->
+              <div class="bloc__hoja" id="h3">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">idea 2 · la polaroid <span>el recuerdo adentro, la vida real afuera</span></p>
+                  <div class="bloc__par">
+                    <figure><img src="assets/img/caso/sketch-polaroid.jpg" alt="Boceto a lápiz de la polaroid con flores" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/caso/final-polaroid.jpg" alt="Ilustración final de la polaroid con flores" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                  <span class="bloc__sello">elegida</span>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <!-- HOJA 4: idea 3, cámara -->
+              <div class="bloc__hoja" id="h4">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">idea 3 · la cámara <span>la cámara que dispara recuerdos</span></p>
+                  <div class="bloc__par">
+                    <figure><img src="assets/img/caso/sketch-camara.jpg" alt="Boceto a lápiz de una cámara con flores" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/caso/final-camara.jpg" alt="Ilustración de la cámara a color" loading="lazy"><figcaption>prueba a color</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <!-- HOJA 5: imagen y materiales -->
+              <div class="bloc__hoja" id="h5">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">imagen y materiales <span>decisiones finales</span></p>
+                  <ul class="bloc__lista">
+                    <li><b>Ilustración digital</b> con textura, para que se sienta hecha a mano.</li>
+                    <li><b>Flores</b> como algo vivo que se guarda, igual que una canción.</li>
+                    <li><b>Polaroid</b> como el soporte del recuerdo.</li>
+                    <li><b>Impresión</b> para CD o vinilo en papel mate con acabado vintage.</li>
+                  </ul>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <!-- contratapa (no se da vuelta) -->
+              <div class="bloc__contratapa">
+                <img src="assets/img/logo/gato-rosa.png" alt="" width="80" height="76">
+                <p>fin del bloc</p>
+                <button type="button" class="boton" data-bloc-reiniciar>volver a la tapa</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bloc__controles">
+            <button type="button" class="bloc__boton" data-bloc-anterior aria-label="Hoja anterior"><span data-flecha="180"></span></button>
+            <div class="bloc__puntos" aria-hidden="true"></div>
+            <span class="bloc__contador" aria-live="polite">1 / 6</span>
+            <button type="button" class="bloc__boton" data-bloc-siguiente aria-label="Hoja siguiente"><span data-flecha></span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- d · ITERACIONES DESCARTADAS -->
+      <div class="parte" id="descartadas">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>d</b> ideas descartadas</h3>
+        <p class="parte__intro revela">Dos de las tres ideas no pasaron a la portada final. Así decidí.</p>
+        <div class="descartes">
+          <article class="descarte revela">
+            <div class="descarte__img"><img src="assets/img/caso/final-ramo.jpg" alt="Prueba a color de la idea del ramo" loading="lazy"><span class="descarte__sello">descartada</span></div>
+            <h4>El ramo con curita</h4>
+            <p>Hablaba de una herida, pero no del recuerdo. Sin una foto, la idea del disparo se perdía y quedaba muy parecida a la portada original.</p>
+          </article>
+          <article class="descarte revela" data-retraso="1">
+            <div class="descarte__img"><img src="assets/img/caso/final-camara.jpg" alt="Prueba a color de la idea de la cámara" loading="lazy"><span class="descarte__sello">descartada</span></div>
+            <h4>La cámara</h4>
+            <p>Explicaba el disparo de forma muy directa y la cámara le quitaba protagonismo a las flores. Se sentía más fría que el disco.</p>
+          </article>
+          <article class="descarte descarte--elegida revela" data-retraso="2">
+            <div class="descarte__img"><img src="assets/img/caso/final-polaroid.jpg" alt="Ilustración de la idea elegida, la polaroid" loading="lazy"><span class="descarte__sello">elegida</span></div>
+            <h4>La polaroid</h4>
+            <p>Junta las dos ideas. La foto es el disparo y también el recuerdo, y las flores salen del marco hacia la vida real.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- e · DECISIONES TIPOGRÁFICAS -->
+      <div class="parte" id="tipografia">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>e</b> decisiones tipográficas</h3>
+        <div class="tipos">
+          <figure class="tipo revela">
+            <img src="assets/img/caso/tipo-titulo.jpg" alt="Detalle del título balas perdidas escrito a mano sobre el borde de la polaroid" loading="lazy">
+            <figcaption>
+              <b>El título, escrito a mano</b>
+              Una letra manuscrita, como cuando alguien escribe sobre el borde blanco de su polaroid. Así el título se siente un recuerdo propio y no un anuncio.
+            </figcaption>
+          </figure>
+          <figure class="tipo revela" data-retraso="1">
+            <img src="assets/img/caso/tipo-canciones.jpg" alt="Detalle de la lista de canciones en letra condensada sobre el fondo morado" loading="lazy">
+            <figcaption>
+              <b>Las canciones, en letra condensada</b>
+              Una sans serif condensada y clara para las 12 canciones. Ocupa poco espacio y se lee bien aunque el CD sea pequeño.
+            </figcaption>
+          </figure>
+          <div class="tipo tipo--nota papel revela" data-retraso="2">
+            <b>El logo de Morat no se toca</b>
+            <p>Se respetó tal cual, en blanco, en una esquina. Así la marca de la banda se reconoce sin competir con la ilustración.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- f · PRUEBAS DE COLOR -->
+      <div class="parte" id="color">
+        <p class="parte__etapa">prototipar</p>
+        <h3 class="parte__titulo revela"><b>f</b> pruebas de color</h3>
+        <p class="parte__intro revela">Probé la misma paleta en las tres ideas. El morado de fondo da la melancolía y el durazno da la calidez del recuerdo.</p>
+        <div class="pruebas">
+          <figure class="revela"><img src="assets/img/caso/final-ramo.jpg" alt="Prueba de color, idea del ramo" loading="lazy"><figcaption>prueba 1 · ramo</figcaption></figure>
+          <figure class="revela" data-retraso="1"><img src="assets/img/caso/final-camara.jpg" alt="Prueba de color, idea de la cámara" loading="lazy"><figcaption>prueba 2 · cámara</figcaption></figure>
+          <figure class="revela" data-retraso="2"><img src="assets/img/caso/final-polaroid.jpg" alt="Prueba de color, idea de la polaroid" loading="lazy"><figcaption>prueba 3 · polaroid ✓</figcaption></figure>
+        </div>
+        <p class="mini-titulo revela">la paleta final del disco · el color como emoción</p>
+        <p class="revela"><span class="solo-mouse">Haz clic en un color para copiar su código.</span><span class="solo-tactil">Toca un color para copiar su código.</span></p>
+        <!-- Estos 5 colores son del DISCO (contenido del proyecto), no de la web -->
+        <ul class="paleta">
+          <li style="--c:#3B1A33" data-hex="#3B1A33"><b>Morado</b><span>melancolía y nostalgia</span></li>
+          <li style="--c:#8E3A7A" data-hex="#8E3A7A"><b>Ciruela</b><span>el amor intenso del disco</span></li>
+          <li style="--c:#F4A06B" data-hex="#F4A06B" class="claro"><b>Durazno</b><span>la calidez del recuerdo</span></li>
+          <li style="--c:#E58FA6" data-hex="#E58FA6" class="claro"><b>Rosa</b><span>ternura</span></li>
+          <li style="--c:#F3E6D3" data-hex="#F3E6D3" class="claro"><b>Crema</b><span>papel fotográfico y paso del tiempo</span></li>
+        </ul>
+      </div>
+
+      <!-- g · EVALUAR -->
+      <div class="parte" id="evaluar">
+        <p class="parte__etapa">evaluar</p>
+        <h3 class="parte__titulo revela"><b>g</b> evaluación</h3>
+        <div class="dos">
+          <p class="revela">Mostré la propuesta a mis compañeros y a mi docente para comprobar si la idea se entendía sin explicarla.</p>
+          <div class="evaluar revela" data-retraso="1">
+            <article class="papel"><h4>lo que funcionó</h4><p>Se reconoció la relación entre cámara, recuerdo y canción.</p></article>
+            <article class="papel papel--celeste"><h4>lo que ajusté</h4><p>Más contraste en las flores de afuera. Un título más legible que no le quite protagonismo a la ilustración. Una letra manuscrita mejor trabajada.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACTO 3 · EL DESENLACE ═══════════════ -->
+  <section class="acto tema-indigo acto--final" id="acto3" data-acto="2">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">acto 3 · el desenlace y el impacto</p>
+        <h2 class="titulo-l"><span class="barrido">el resultado</span></h2>
+        <p class="acto__pregunta revela">¿Cuál fue el resultado final y cómo funciona en la vida real?</p>
+        <p class="revela">Polaroids con flores adentro, que son el recuerdo, y las mismas flores afuera, en la vida real. Cada foto es una bala perdida que alcanzó a alguien.</p>
+      </header>
+
+      <!-- Portada / contraportada que se da vuelta.
+           OJO: el efecto "revela" va en el contenedor de afuera, NO en .giro,
+           porque los dos usan transform y se pisaban. -->
+      <div class="giro-zona">
+        <div class="giro-escena revela">
+          <div class="giro" data-giro data-cursor="arrastra o toca" role="button" tabindex="0" aria-label="Dar vuelta el disco">
+            <div class="giro__cara giro__cara--frente"><img src="assets/img/caso/portada.jpg" alt="Portada final de Balas perdidas" draggable="false"></div>
+            <div class="giro__cara giro__cara--dorso"><img src="assets/img/caso/contraportada.jpg" alt="Contraportada final con la lista de 12 canciones, el logo de Morat y el código de barras" draggable="false"></div>
+          </div>
+          <p class="giro__lado" aria-live="polite">viendo · <b>portada</b></p>
+        </div>
+        <div class="giro-zona__texto revela" data-retraso="1">
+          <p class="mini-titulo">portada y contraportada</p>
+          <p>La contraportada sigue la misma escena. Las flores continúan fuera del marco y acompañan la lista de canciones.</p>
+          <p class="pista"><span class="solo-mouse">Arrastra el disco de lado o usa el botón para darlo vuelta.</span><span class="solo-tactil">Desliza el disco con el dedo o toca el botón para darlo vuelta.</span></p>
+          <button type="button" class="boton boton--lleno" data-girar>dar vuelta ↻</button>
+        </div>
+      </div>
+
+      <!-- Antes / después: arrastra la línea para comparar -->
+      <div class="antes-despues">
+        <div class="revela">
+          <p class="mini-titulo">antes y después</p>
+          <p>Mueve la línea para comparar la portada original con el rediseño.</p>
+        </div>
+        <div class="comparar revela" data-comparar data-cursor="mueve la línea">
+          <img src="assets/img/caso/portada.jpg" alt="Portada rediseñada" class="comparar__despues" loading="lazy">
+          <div class="comparar__antes"><img src="assets/img/caso/portada-original.jpg" alt="Portada original" loading="lazy"></div>
+          <span class="comparar__rotulo comparar__rotulo--a">original</span>
+          <span class="comparar__rotulo comparar__rotulo--d">rediseño</span>
+          <input class="comparar__control" type="range" min="0" max="100" value="50" aria-label="Comparar portada original y rediseño">
+          <span class="comparar__linea" aria-hidden="true"><i></i></span>
+        </div>
+      </div>
+
+      <!-- Mockups: la pieza en su contexto real (in situ) -->
+      <p class="mini-titulo revela">la pieza en la vida real · mockups</p>
+      <div class="mockups">
+        <button type="button" class="mockup revela" data-ampliar="assets/img/caso/mockup-cd-caja.jpg" data-cursor="ampliar" aria-label="Ampliar mockup del estuche del CD">
+          <img src="assets/img/caso/mockup-cd-caja.jpg" alt="Mockup del estuche del CD con portada y contraportada" loading="lazy">
+          <span class="mockup__lupa" aria-hidden="true">ampliar +</span>
+        </button>
+        <button type="button" class="mockup mockup--alto revela" data-retraso="1" data-ampliar="assets/img/caso/mockup-cd.jpg" data-cursor="ampliar" aria-label="Ampliar mockup del CD">
+          <img src="assets/img/caso/mockup-cd.jpg" alt="Mockup del CD impreso con la ilustración" loading="lazy">
+          <span class="mockup__lupa" aria-hidden="true">ampliar +</span>
+        </button>
+        <div class="impacto revela" data-retraso="2">
+          <p class="mini-titulo">el impacto</p>
+          <ul class="impacto__lista">
+            <li><b>Cuenta el nombre.</b> Ahora la portada explica por qué el disco se llama <em>Balas perdidas</em>.</li>
+            <li><b>Sin violencia.</b> El disparo es de una cámara, no de un arma.</li>
+            <li><b>Se entiende.</b> Compañeros y docente reconocieron la relación entre cámara, recuerdo y canción.</li>
+            <li><b>Funciona impresa.</b> La escena sigue de la portada a la contraportada en el CD.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CIERRE POÉTICO: la frase del proyecto ═══
+       Las palabras aparecen una por una, caen pétalos y la polaroid
+       se "revela" como una foto instantánea.                         -->
+  <section class="cierre tema-vino" aria-label="La idea del proyecto">
+    <div class="cierre__petalos" aria-hidden="true"></div>
+    <div class="contenedor cierre__grid">
+      <figure class="cierre__foto">
+        <div class="cierre__polaroid">
+          <img src="assets/img/caso/final-polaroid.jpg" alt="La polaroid con flores de la portada" loading="lazy">
+          <figcaption>un recuerdo que florece</figcaption>
+        </div>
+      </figure>
+      <blockquote class="cierre__cita">
+        <p class="cierre__frase" data-palabras>Las canciones, como las fotos, se disparan sin saber a quién alcanzarán.</p>
+        <p class="cierre__frase cierre__frase--2" data-palabras>Cada persona las guarda como un recuerdo distinto.</p>
+        <p class="cierre__firma">
+          una bala perdida que se vuelve
+          <span class="cierre__subrayado">un recuerdo que florece
+            <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 60 4, 120 18, 180 9 S 270 6, 296 12"/></svg>
+          </span>
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECCIÓN ELECTIVA · E · POSTMORTEM ═══════════ -->
+  <section class="acto tema-celeste lecciones" id="lecciones" data-acto="3">
+    <div class="contenedor">
+      <header class="acto__cabeza">
+        <p class="etiqueta">sección electiva · postmortem</p>
+        <h2 class="titulo-l"><span class="barrido">lecciones</span></h2>
+        <p class="acto__pregunta revela">¿Qué aprendí con este proyecto?</p>
+      </header>
+      <ol class="lecciones__lista">
+        <li class="revela"><b>01</b><h3>Funcionó</h3><p>Cambiar la bala por el disparo de una cámara. Con un solo cambio el título se entendió sin violencia.</p></li>
+        <li class="revela" data-retraso="1"><b>02</b><h3>Ajusté</h3><p>El contraste de las flores de afuera y la legibilidad del título, para que no compitieran con la ilustración.</p></li>
+        <li class="revela" data-retraso="2"><b>03</b><h3>Aprendí</h3><p>Un objeto cotidiano, como una polaroid, puede contar una idea de forma poética.</p></li>
+        <li class="revela" data-retraso="3"><b>04</b><h3>Haría distinto</h3><p>Probar la portada con más oyentes de Morat, no solo en clase, para ver si la idea llega igual.</p></li>
+      </ol>
+      <div class="lecciones__final revela">
+        <p>¿Seguimos?</p>
+        <div class="lecciones__botones">
+          <a class="boton boton--lleno" href="index.html#trabajos">ver mis trabajos <span data-flecha></span></a>
+          <a class="boton" href="sobre-mi.html">sobre mí</a>
+          <a class="boton" href="index.html"><span data-flecha="180"></span> volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Visor de imágenes ampliadas.
+     Se cierra con el botón, tocando en cualquier parte o con Esc. -->
+<dialog class="lightbox" aria-label="Imagen ampliada">
+  <img alt="">
+  <button type="button" class="lightbox__cerrar">cerrar <span aria-hidden="true">✕</span></button>
+  <p class="lightbox__pista">toca en cualquier parte para cerrar</p>
+</dialog>
+
+<script src="js/datos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/caso.js"></script>
+</body>
+</html>

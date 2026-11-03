@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>veruzh · productora audiovisual, diseñadora digital y motion graphics</title>
+  <meta name="description" content="Portafolio de Verónica Vidaurre (veruzh): producción audiovisual, diseño digital y motion graphics desde La Paz, Bolivia.">
+  <meta name="theme-color" content="#2B214A">
+  <link rel="icon" href="assets/img/logo/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body data-pagina="inicio">
+
+  <!-- ═══ INTRO: "líder" de película con cuenta regresiva ═══
+       Se muestra solo la primera vez que entras en la sesión.  -->
+  <div class="intro" id="intro" role="dialog" aria-label="Bienvenida">
+    <canvas class="intro__lienzo" aria-hidden="true"></canvas>
+    <div class="intro__ui">
+      <p class="intro__hola">hola, este es el portafolio de <b>veruzh</b></p>
+      <div class="intro__botones">
+        <button class="boton boton--lleno" type="button" data-entrar="con">entrar con sonido</button>
+        <button class="boton" type="button" data-entrar="sin">entrar sin sonido</button>
+      </div>
+      <p class="intro__pista">puedes cambiar el sonido cuando quieras con el botón de arriba</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ═══ 01 · HERO ═══ -->
+    <section class="hero tema-indigo" id="inicio">
+      <div class="visor" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <p class="hero__tc" aria-hidden="true">REC <span class="hero__tiempo">00:00:00:00</span></p>
+
+      <h1 class="hero__titulo">
+        <span class="oculto-visual">veruzh, Verónica Vidaurre</span>
+        <!-- El nombre se dibuja en un <canvas>: el video se ve SOLO dentro de las
+             letras y siempre ocupa una sola línea, del ancho de la pantalla. -->
+        <canvas class="hero__lienzo" aria-hidden="true"></canvas>
+      </h1>
+      <!-- el video que se ve dentro de las letras (invisible por sí solo) -->
+      <video class="hero__video" muted playsinline autoplay preload="auto" aria-hidden="true"></video>
+
+      <div class="hero__pie">
+        <p class="hero__rol">soy <span class="hero__oficio">productora audiovisual</span></p>
+        <p class="hero__bio">Produzco, diseño y animo piezas para redes sociales, marcas y eventos desde La Paz, Bolivia.</p>
+        <div class="hero__botones">
+          <a class="boton boton--lleno" href="#trabajos">ver mis trabajos <span data-flecha="90"></span></a>
+          <a class="boton" href="#contacto">contacto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ REEL: los cuadros de todos los videos se arman al bajar ═══ -->
+    <section class="reel tema-petroleo" id="reel" aria-label="Cuadros de todos los proyectos">
+      <div class="contenedor reel__texto">
+        <p class="etiqueta">el reel</p>
+        <p class="reel__frase titulo-m"><span data-cifra="10">10</span> piezas · <span data-cifra="5">5</span> proyectos · <span data-cifra="1">1</span> caso</p>
+      </div>
+      <div class="reel__cuadros"><!-- los cuadros los crea inicio.js --></div>
+      <p class="reel__pista contenedor"><span class="solo-tactil">desliza la tira de lado para ver todos los cuadros</span></p>
+    </section>
+
+    <!-- ═══ 02 · TRABAJOS ═══ -->
+    <section class="trabajos tema-rosa" id="trabajos">
+      <div class="contenedor">
+        <header class="seccion-cabeza">
+          <p class="etiqueta">02 — trabajos</p>
+          <h2 class="titulo-l"><span class="barrido">trabajos</span></h2>
+          <p class="seccion-cabeza__texto revela">Videos para redes, motion graphics y logos animados. Toca un proyecto para verlo completo.</p>
+          <div class="filtros" role="group" aria-label="Filtrar trabajos"><!-- botones creados por inicio.js --></div>
+        </header>
+        <div class="tarjetas"><!-- tarjetas creadas por inicio.js con los datos de datos.js --></div>
+      </div>
+    </section>
+
+    <!-- ═══ 03 · ESTUDIO DE CASO (adelanto) ═══ -->
+    <section class="caso-adelanto tema-vino" id="caso">
+      <div class="contenedor caso-adelanto__grid">
+        <div class="caso-adelanto__texto">
+          <p class="etiqueta">03 — estudio de caso</p>
+          <h2 class="titulo-l"><span class="barrido">balas</span><br><span class="barrido">perdidas</span></h2>
+          <p class="revela">Rediseño de la portada del álbum <em>Balas perdidas</em> de Morat. Una cámara que dispara recuerdos en lugar de balas.</p>
+          <p class="caso-adelanto__pista revela" data-retraso="1">
+            <span class="solo-mouse">Pasa el mouse sobre el boceto para ver la ilustración final.</span>
+            <span class="solo-tactil">Desliza el dedo sobre el boceto para ver la ilustración final.</span>
+          </p>
+          <div class="caso-adelanto__botones revela" data-retraso="2">
+            <a class="boton boton--lleno" href="estudio-de-caso.html">leer el estudio de caso <span data-flecha></span></a>
+            <button class="boton" type="button" data-revelar>ver final</button>
+          </div>
+        </div>
+        <figure class="pincel revela" data-cursor="pinta">
+          <div class="pincel__area">
+            <img src="assets/img/caso/sketch-polaroid.jpg" alt="Boceto a lápiz de la portada, una polaroid con un ramo de flores" width="720" height="538" loading="lazy">
+          </div>
+          <figcaption class="pincel__nota">boceto → final</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═══ 04 · SOBRE MÍ (adelanto) ═══ -->
+    <section class="sobre-adelanto tema-celeste">
+      <div class="contenedor">
+        <p class="etiqueta">04 — sobre mí</p>
+        <p class="sobre-adelanto__frase revela">
+          Soy <strong>Verónica</strong>, aunque en redes y en mis créditos firmo como
+          <img class="sobre-adelanto__gato" src="assets/img/logo/gato-vino.png" alt="" width="64" height="61"> <strong>veruzh</strong>.
+          Grabo, edito, diseño y animo.
+        </p>
+        <a class="boton boton--lleno revela" href="sobre-mi.html" data-retraso="1">conóceme en mi escritorio <span data-flecha></span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Orden de scripts: librería GSAP → datos → común → página -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

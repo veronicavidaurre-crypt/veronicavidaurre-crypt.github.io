@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- El título real lo pone proyecto.js según el proyecto que se abra -->
+  <title>Proyecto · veruzh</title>
+  <meta name="description" content="Proyecto del portafolio de veruzh: producción audiovisual y motion graphics.">
+  <meta name="theme-color" content="#EFCADB">
+  <link rel="icon" href="assets/img/logo/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/proyecto.css">
+</head>
+<!--
+  Esta ES UNA SOLA PÁGINA para los 5 proyectos.
+  El link decide cuál se muestra:  proyecto.html?p=illich
+  Los textos y videos de cada proyecto se editan en js/datos.js
+-->
+<body data-pagina="trabajos">
+  <main class="proyecto">
+
+    <section class="proyecto__cuerpo contenedor">
+      <!-- TÍTULO (en computadora va a la derecha del video; en celular, arriba) -->
+      <header class="proyecto__cabeza">
+        <!-- MIGAS DE PAN: dónde estás y cómo volver -->
+        <nav class="migas" aria-label="Estás aquí">
+          <a href="index.html">inicio</a><span aria-hidden="true">/</span>
+          <a href="index.html#trabajos">trabajos</a><span aria-hidden="true">/</span>
+          <span aria-current="page" data-campo="titulo-corto"></span>
+        </nav>
+        <p class="etiqueta"><span data-campo="contador"></span></p>
+        <h1 class="proyecto__titulo titulo-xl"><span class="barrido" data-campo="titulo"></span></h1>
+        <p class="proyecto__subtitulo revela" data-campo="subtitulo"></p>
+      </header>
+      <!-- REPRODUCTOR con controles propios -->
+      <div class="proyecto__pantalla">
+        <div class="reproductor" data-cursor="play">
+          <video playsinline preload="metadata"></video>
+          <div class="visor" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <button class="reproductor__grande" type="button" aria-label="Reproducir">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+          <div class="reproductor__barra">
+            <button class="reproductor__play" type="button" aria-label="Reproducir">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              <svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+            <span class="reproductor__tiempo">00:00 / 00:00</span>
+            <input class="reproductor__avance" type="range" min="0" max="1000" value="0" step="1" aria-label="Avance del video">
+            <button class="reproductor__mute" type="button" aria-label="Activar sonido">
+              <svg class="i-mudo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg>
+              <svg class="i-sonido" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 8.5a5 5 0 010 7M19.5 6a8.5 8.5 0 010 12"/></svg>
+            </button>
+            <button class="reproductor__completa" type="button" aria-label="Pantalla completa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- lista de clips (solo aparece si el proyecto tiene más de un video) -->
+        <div class="clips" role="tablist" aria-label="Videos del proyecto"></div>
+      </div>
+
+      <!-- FICHA + TEXTO -->
+      <div class="proyecto__info">
+        <dl class="ficha revela">
+          <div><dt>Cliente</dt><dd data-campo="cliente"></dd></div>
+          <div><dt>Año</dt><dd data-campo="anio"></dd></div>
+          <div><dt>Disciplina</dt><dd data-campo="disciplina"></dd></div>
+          <div><dt>Mi rol</dt><dd data-campo="rol"></dd></div>
+          <div><dt>Formato</dt><dd data-campo="formato"></dd></div>
+        </dl>
+        <div class="proyecto__texto" data-campo="texto"></div>
+        <p class="proyecto__pista texto-tenue revela">
+          <span class="solo-mouse">Espacio: reproducir o pausar · ← → cambiar de video</span>
+          <span class="solo-tactil">Toca el video para reproducir o pausar</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- NAVEGADOR DE PROYECTOS: los 5 en fila, el actual marcado.
+         En el último proyecto, en vez de "siguiente" aparece un cierre
+         que lleva al inicio, al estudio de caso o a contacto (no hay bucle). -->
+    <nav class="recorrido" aria-label="Todos los proyectos">
+      <div class="contenedor">
+        <div class="recorrido__cabeza">
+          <p class="etiqueta">tus pasos por mis trabajos</p>
+          <p class="recorrido__cuenta" data-campo="cuenta"></p>
+        </div>
+        <ol class="recorrido__lista"><!-- creada por proyecto.js --></ol>
+        <!-- aquí va "siguiente proyecto" o el panel final (lo decide proyecto.js) -->
+        <div class="recorrido__final"></div>
+      </div>
+    </nav>
+  </main>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/proyecto.js"></script>
+</body>
+</html>

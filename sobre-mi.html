@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sobre mí · veruzh</title>
+  <meta name="description" content="Verónica Vidaurre (veruzh): productora audiovisual, diseñadora digital y motion graphics en La Paz, Bolivia.">
+  <meta name="theme-color" content="#EFCADB">
+  <link rel="icon" href="assets/img/logo/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sobre-mi.css">
+</head>
+<body data-pagina="sobre" class="tema-rosa">
+<main class="sobre">
+
+  <header class="sobre__cabeza contenedor">
+    <nav class="migas" aria-label="Estás aquí">
+      <a href="index.html">inicio</a><span aria-hidden="true">/</span><span aria-current="page">sobre mí</span>
+    </nav>
+    <p class="etiqueta">04 — sobre mí</p>
+    <h1 class="titulo-xl"><span class="barrido">hola,</span><br><span class="barrido">soy veruzh</span></h1>
+    <p class="sobre__intro revela">Verónica Vidaurre. <span data-oficios></span>. Vivo y trabajo en La Paz, Bolivia.</p>
+  </header>
+
+  <!-- ═══ EL ESCRITORIO ═══
+       Una mesa a oscuras con una lámpara que sigue al mouse (o al dedo).
+       Cada objeto abre una nota. Las posiciones están en sobre-mi.css.   -->
+  <section class="escritorio" aria-label="Mi escritorio: cada objeto abre una nota">
+    <p class="escritorio__pista">
+      <span class="solo-mouse">mueve la lámpara con el mouse y haz clic en los objetos</span>
+      <span class="solo-tactil">toca los objetos de la mesa</span>
+    </p>
+
+    <button class="objeto objeto--cuaderno" type="button" data-nota="quien" data-cursor="abrir">
+      <img src="assets/img/extras/cuaderno.webp" alt="" loading="lazy"><span class="objeto__tag">quién soy</span>
+    </button>
+    <button class="objeto objeto--hoja" type="button" data-nota="hago" data-cursor="abrir">
+      <img src="assets/img/extras/hoja-post.webp" alt="" loading="lazy"><span class="objeto__tag">qué hago</span>
+    </button>
+    <button class="objeto objeto--negra" type="button" data-nota="contacto" data-cursor="abrir">
+      <img src="assets/img/extras/hoja-negra.webp" alt="" loading="lazy"><span class="objeto__tag">contacto</span>
+    </button>
+    <button class="objeto objeto--dino" type="button" data-nota="bocetos" data-cursor="abrir">
+      <img src="assets/img/extras/dino.webp" alt="" loading="lazy"><span class="objeto__tag">bocetos</span>
+    </button>
+    <button class="objeto objeto--gato" type="button" data-nota="marca" data-cursor="abrir">
+      <img src="assets/img/logo/gato-vino.png" alt="" loading="lazy"><span class="objeto__tag">veruzh</span>
+    </button>
+    <a class="objeto objeto--boli" href="#" data-correo data-cursor="escribir">
+      <img src="assets/img/extras/boligrafo.webp" alt="" loading="lazy"><span class="objeto__tag">escríbeme</span>
+    </a>
+
+    <div class="lampara" aria-hidden="true"></div>
+  </section>
+
+  <!-- Notas que abren los objetos (el texto se edita aquí mismo) -->
+  <div class="nota" role="dialog" aria-modal="true" aria-labelledby="nota-titulo" hidden>
+    <div class="nota__papel">
+      <button type="button" class="nota__cerrar" aria-label="Cerrar nota">cerrar ✕</button>
+      <h2 id="nota-titulo" class="nota__titulo"></h2>
+      <div class="nota__cuerpo"></div>
+    </div>
+  </div>
+  <template data-nota-contenido="quien">
+    <h2>quién soy</h2>
+    <p>Soy Verónica Vidaurre y firmo mi trabajo como <b>veruzh</b>. Soy productora audiovisual, diseñadora digital y hago motion graphics.</p>
+    <p>Trabajo con marcas, eventos universitarios y clientes que necesitan contar algo en pocos segundos, sobre todo en redes sociales.</p>
+  </template>
+  <template data-nota-contenido="hago">
+    <h2>qué hago</h2>
+    <ul>
+      <li><b>Producción audiovisual:</b> grabación y edición de contenido vertical para TikTok y Reels.</li>
+      <li><b>Motion graphics:</b> logos animados y piezas promocionales para redes y eventos.</li>
+      <li><b>Diseño digital:</b> piezas gráficas, ilustración y portadas, como el rediseño de <em>Balas perdidas</em>.</li>
+    </ul>
+  </template>
+  <template data-nota-contenido="contacto">
+    <h2>contacto</h2>
+    <ul class="nota__contacto" data-lista-contacto></ul>
+  </template>
+  <template data-nota-contenido="bocetos">
+    <h2>bocetos</h2>
+    <p>Antes de ilustrar o animar, dibujo. En el estudio de caso puedes hojear mi bloc de bocetos, del lápiz a la pieza final.</p>
+    <p><a class="boton" href="estudio-de-caso.html#bocetos">ver el bloc de bocetos</a></p>
+  </template>
+  <template data-nota-contenido="marca">
+    <h2>veruzh</h2>
+    <p>Es el nombre con el que firmo mis trabajos. El gato es mi logo: lo vas a ver en la cabecera, en el menú y en la transición entre páginas.</p>
+  </template>
+
+  <!-- ═══ VERSIÓN RÁPIDA (todo a la vista, sin interacción) ═══ -->
+  <section class="rapida contenedor" aria-labelledby="rapida-titulo">
+    <p class="etiqueta">¿poco tiempo?</p>
+    <h2 id="rapida-titulo" class="titulo-m revela">todo en un vistazo</h2>
+    <div class="rapida__grid">
+      <div class="revela">
+        <h3>Bio</h3>
+        <p>Verónica Vidaurre (veruzh). Productora audiovisual, diseñadora digital y motion graphics en La Paz, Bolivia. Hago contenido para redes sociales, logos animados y motion graphics para marcas y eventos.</p>
+      </div>
+      <div class="revela" data-retraso="1">
+        <h3>Servicios</h3>
+        <ul>
+          <li>Producción y edición de video vertical</li>
+          <li>Motion graphics y logos animados</li>
+          <li>Diseño digital e ilustración</li>
+        </ul>
+      </div>
+      <div class="revela" data-retraso="2">
+        <h3>Contacto</h3>
+        <ul data-lista-contacto></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/datos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/sobre-mi.js"></script>
+</body>
+</html>

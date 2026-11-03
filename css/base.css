@@ -1,0 +1,455 @@
+/* ═══════════════════════════════════════════════════════════════
+   VERUZH · PORTAFOLIO — base.css
+   Estilos que comparten TODAS las páginas: colores, tipografías,
+   cabecera, menú, transición entre páginas, pie y botones.
+   Cada página tiene además su propio CSS (inicio.css, caso.css…).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── 1. TIPOGRAFÍAS (archivos en la carpeta /fonts) ─────────────
+   · Getai: títulos. OJO: esta fuente NO trae tildes ni ñ; si un
+     título lleva acento, el navegador usa Switzer solo para esa letra.
+   · Switzer: textos. Es "variable": acepta cualquier grosor 100–900. */
+@font-face {
+  font-family: 'Getai';
+  src: url('../fonts/DTGetaiGroteskDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('../fonts/Switzer-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('../fonts/Switzer-VariableItalic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─── 2. COLORES ───────────────────────────────────────────────────
+   Solo se usan los 12 colores de tu paleta.
+   Las variables con nombre de USO (--fondo, --tinta…) son las que
+   usan los estilos; cada sección puede cambiarlas con una clase
+   "tema-..." (más abajo). Así el contraste siempre queda cuidado.   */
+:root {
+  /* tu paleta — fila fuerte */
+  --rojo: #D3372E;
+  --vino: #921A45;
+  --indigo: #2B214A;
+  --petroleo: #0C3D4E;
+  /* fila media */
+  --coral: #CC8987;
+  --malva: #C6A5B3;
+  --lavanda: #A19CB5;
+  --salvia: #74959E;
+  /* fila clara */
+  --arena: #BDA6A9;
+  --rosa: #EFCADB;
+  --lila: #C2BBCE;
+  --celeste: #BEDEE5;
+
+  /* colores por USO (tema claro, el de base) */
+  --fondo: var(--rosa);          /* fondo de la página */
+  --superficie: var(--celeste);  /* tarjetas, notas */
+  --tinta: var(--indigo);        /* texto principal  (contraste 10:1) */
+  --tinta-2: var(--petroleo);    /* texto secundario (contraste 7,9:1) */
+  --acento: var(--vino);         /* links y detalles (contraste 5,8:1) */
+  --acento-grande: var(--rojo);  /* solo para cosas grandes o decorativas */
+  --linea: color-mix(in srgb, var(--indigo) 22%, transparent);
+  --sombra: color-mix(in srgb, var(--indigo) 30%, transparent);
+
+  /* tipografía */
+  --f-titulo: 'Getai', 'Switzer', 'Arial Black', sans-serif;
+  --f-texto: 'Switzer', 'Helvetica Neue', Arial, sans-serif;
+
+  /* espacios que se adaptan al tamaño de pantalla */
+  --margen: clamp(18px, 4.5vw, 72px);
+  --seccion: clamp(72px, 11vw, 170px);
+  --cabecera: 76px;
+
+  /* silueta del gato para la transición (va escrita como dato para que
+     funcione también al abrir la web con doble clic, sin servidor) */
+  --gato-mascara: url('data:image/png;base64,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');
+}
+
+/* Temas de sección: pon la clase en una <section> para cambiar sus colores */
+.tema-rosa    { --fondo: var(--rosa);    --superficie: var(--celeste); --tinta: var(--indigo);  --tinta-2: var(--petroleo); --acento: var(--vino);  --acento-grande: var(--rojo); }
+.tema-celeste { --fondo: var(--celeste); --superficie: var(--rosa);    --tinta: var(--petroleo); --tinta-2: var(--indigo);  --acento: var(--vino);  --acento-grande: var(--rojo); }
+.tema-lila    { --fondo: var(--lila);    --superficie: var(--rosa);    --tinta: var(--indigo);  --tinta-2: var(--indigo);   --acento: var(--vino);  --acento-grande: var(--vino); }
+.tema-malva   { --fondo: var(--malva);   --superficie: var(--rosa);    --tinta: var(--indigo);  --tinta-2: var(--indigo);   --acento: var(--indigo); --acento-grande: var(--vino); }
+.tema-indigo  { --fondo: var(--indigo);  --superficie: var(--petroleo); --tinta: var(--rosa);   --tinta-2: var(--celeste);  --acento: var(--coral); --acento-grande: var(--rojo);
+                --linea: color-mix(in srgb, var(--rosa) 22%, transparent); --sombra: color-mix(in srgb, var(--indigo) 60%, var(--petroleo)); }
+.tema-petroleo{ --fondo: var(--petroleo); --superficie: var(--indigo); --tinta: var(--celeste); --tinta-2: var(--rosa);     --acento: var(--coral); --acento-grande: var(--coral);
+                --linea: color-mix(in srgb, var(--celeste) 22%, transparent); --sombra: color-mix(in srgb, var(--petroleo) 70%, var(--indigo)); }
+.tema-vino    { --fondo: var(--vino);    --superficie: var(--rosa);    --tinta: var(--rosa);    --tinta-2: var(--celeste);  --acento: var(--celeste); --acento-grande: var(--rosa);
+                --linea: color-mix(in srgb, var(--rosa) 28%, transparent); --sombra: color-mix(in srgb, var(--indigo) 55%, transparent); }
+[class*="tema-"] { background-color: var(--fondo); color: var(--tinta); }
+
+/* ─── 3. RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--cabecera) + 16px); }
+body {
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--f-texto);
+  font-size: clamp(16px, 0.9vw + 11px, 19px);
+  line-height: 1.6;
+  font-weight: 420;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, video { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a, button, [role="button"], label { cursor: pointer; }
+::selection { background: var(--vino); color: var(--rosa); }
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 4px; border-radius: 4px; }
+.oculto-visual {           /* texto solo para lectores de pantalla */
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Grano de película muy suave sobre toda la web */
+body::after {
+  content: '';
+  position: fixed; inset: -50%;
+  z-index: 9000; pointer-events: none;
+  opacity: 0.06; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grano 0.9s steps(4) infinite;
+}
+@keyframes grano {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-3%, 2%); }
+  50%  { transform: translate(2%, -3%); }
+  75%  { transform: translate(-1%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ─── 4. TEXTOS COMUNES ────────────────────────────────────────── */
+.titulo-xl, .titulo-l, .titulo-m {
+  font-family: var(--f-titulo);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  padding-top: 0.06em;          /* que las letras altas no tapen lo de arriba */
+}
+.titulo-xl { font-size: clamp(56px, 13vw, 230px); }
+.titulo-l  { font-size: clamp(44px, 8vw, 132px); }
+.titulo-m  { font-size: clamp(30px, 4.4vw, 68px); }
+
+/* etiqueta de sección: una pastilla con número y nombre.
+   Tiene margen propio para que el título grande nunca la tape. */
+.etiqueta {
+  display: inline-flex; align-items: center; gap: 10px;
+  align-self: start; justify-self: start;
+  padding: 7px 14px 7px 12px; border-radius: 999px;
+  border: 1.5px solid currentColor;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--tinta-2);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  position: relative; z-index: 2;
+  margin-bottom: 6px;
+}
+.etiqueta::before {           /* punto de "grabando" */
+  content: ''; width: 8px; height: 8px; border-radius: 50%; flex: 0 0 8px;
+  background: var(--acento-grande);
+  animation: rec 1.6s steps(1) infinite;
+}
+@keyframes rec { 50% { opacity: 0.25; } }
+
+.texto-2 { color: var(--tinta-2); }
+.contenedor { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 var(--margen); }
+/* textos que solo se muestran con mouse o solo en pantallas táctiles */
+.solo-tactil { display: none; }
+@media (hover: none), (pointer: coarse) { .solo-mouse { display: none; } .solo-tactil { display: inline; } }
+
+/* esquinas de visor de cámara (se usan en el inicio y en los videos) */
+.visor { position: absolute; inset: 0; pointer-events: none; }
+.visor i { position: absolute; width: 24px; height: 24px; border: 0 solid currentColor; opacity: 0.8; }
+.visor i:nth-child(1) { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.visor i:nth-child(2) { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.visor i:nth-child(3) { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.visor i:nth-child(4) { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* cabecera de sección: etiqueta + título + texto, bien separados */
+.seccion-cabeza { display: grid; gap: 16px; margin-bottom: clamp(36px, 6vw, 80px); justify-items: start; }
+.seccion-cabeza__texto { max-width: 52ch; color: var(--tinta-2); font-size: clamp(17px, 1.3vw, 21px); }
+
+/* ─── 5. BOTONES (mínimo 52px de alto = fáciles de tocar) ─────── */
+.boton {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 52px; padding: 0 26px;
+  border: 2px solid var(--tinta); border-radius: 999px;
+  color: var(--tinta); background: transparent;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+  overflow: hidden; isolation: isolate;
+  transition: color 0.35s ease, background 0.35s ease, transform 0.2s;
+}
+.boton::before {              /* relleno que sube al pasar el mouse */
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: var(--tinta);
+  transform: translateY(101%);
+  transition: transform 0.45s cubic-bezier(.7, 0, .2, 1);
+}
+.boton svg { width: 18px; height: 18px; flex: 0 0 18px; }
+@media (hover: hover) {
+  .boton:hover { color: var(--fondo); }
+  .boton:hover::before { transform: translateY(0); }
+}
+.boton:active { transform: scale(0.97); }
+.boton--lleno { background: var(--tinta); color: var(--fondo); }
+.boton--lleno::before { background: var(--acento); }
+@media (hover: hover) { .boton--lleno:hover { color: var(--fondo); } }
+.boton[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+/* ─── 6. CABECERA (una barra flotante, siempre legible) ────────── */
+.cabecera {
+  position: fixed; top: 12px; left: var(--margen); right: var(--margen); z-index: 800;
+  height: 58px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 0 8px 0 16px;
+  background: color-mix(in srgb, var(--rosa) 92%, transparent);
+  color: var(--indigo);
+  border: 1.5px solid color-mix(in srgb, var(--indigo) 18%, transparent);
+  border-radius: 999px;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--indigo) 18%, transparent);
+  transition: transform 0.4s cubic-bezier(.2, .8, .2, 1);
+}
+.marca { display: flex; align-items: center; gap: 10px; min-height: 48px; flex: 0 0 auto; }
+.marca img { width: 34px; height: auto; transition: transform 0.4s ease; }
+.marca span { font-family: var(--f-titulo); font-size: 21px; line-height: 1; }
+@media (hover: hover) { .marca:hover img { transform: rotate(-10deg) scale(1.08); } }
+
+/* links visibles en computadora (en celular van dentro del menú) */
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 999px;
+  font-size: 15px; font-weight: 550; white-space: nowrap;
+  transition: background 0.25s, color 0.25s;
+}
+.nav a[aria-current="page"] { background: var(--indigo); color: var(--rosa); }
+@media (hover: hover) { .nav a:not([aria-current="page"]):hover { background: color-mix(in srgb, var(--indigo) 10%, transparent); } }
+
+.cabecera__derecha { display: flex; align-items: center; gap: 4px; }
+/* botón de sonido: un pequeño ecualizador que se mueve si está activo */
+.sonido {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 0 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+}
+@media (hover: hover) { .sonido:hover { background: color-mix(in srgb, var(--indigo) 10%, transparent); } }
+.sonido__barras { display: flex; align-items: flex-end; gap: 2px; height: 14px; }
+.sonido__barras i { width: 2px; height: 3px; background: currentColor; }
+.sonido.activo .sonido__barras i { animation: eq 0.9s ease-in-out infinite; }
+.sonido.activo .sonido__barras i:nth-child(2) { animation-delay: -0.3s; }
+.sonido.activo .sonido__barras i:nth-child(3) { animation-delay: -0.6s; }
+.sonido.activo .sonido__barras i:nth-child(4) { animation-delay: -0.15s; }
+@keyframes eq { 0%, 100% { height: 3px; } 50% { height: 14px; } }
+
+/* botón de menú (solo en tablet y celular) */
+.boton-menu {
+  display: none;
+  height: 44px; padding: 0 16px 0 14px; gap: 10px; align-items: center;
+  border-radius: 999px; background: var(--indigo); color: var(--rosa);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.boton-menu__icono { position: relative; width: 18px; height: 12px; }
+.boton-menu__icono i { position: absolute; left: 0; right: 0; height: 2px; background: currentColor; transition: transform 0.4s, top 0.3s; }
+.boton-menu__icono i:nth-child(1) { top: 1px; }
+.boton-menu__icono i:nth-child(2) { top: 9px; }
+body.menu-abierto .boton-menu__icono i:nth-child(1) { top: 5px; transform: rotate(45deg); }
+body.menu-abierto .boton-menu__icono i:nth-child(2) { top: 5px; transform: rotate(-45deg); }
+
+@media (max-width: 1100px) {
+  .nav { display: none; }
+  .boton-menu { display: inline-flex; }
+}
+@media (max-width: 420px) {
+  .sonido__texto { display: none; }      /* en celular chico solo queda el ícono */
+  .marca span { font-size: 19px; }
+}
+
+/* ─── 7. MENÚ (tablet y celular: se abre en círculo desde el botón) */
+.menu {
+  position: fixed; inset: 0; z-index: 790;
+  background: var(--indigo); color: var(--rosa);
+  clip-path: circle(0px at var(--mx, 95%) var(--my, 40px));
+  visibility: hidden;
+  transition: clip-path 0.8s cubic-bezier(.77, 0, .18, 1), visibility 0s 0.8s;
+  display: grid; align-content: space-between; gap: 32px;
+  padding: calc(var(--cabecera) + 28px) var(--margen) 32px;
+  overflow-y: auto;
+}
+body.menu-abierto .menu {
+  clip-path: circle(150vmax at var(--mx, 95%) var(--my, 40px));
+  visibility: visible;
+  transition: clip-path 0.8s cubic-bezier(.77, 0, .18, 1), visibility 0s;
+}
+.menu__lista { list-style: none; display: grid; gap: 4px; }
+.menu__lista a {
+  display: flex; align-items: baseline; gap: 16px; padding: 6px 0;
+  font-family: var(--f-titulo); font-size: clamp(38px, 9vw, 84px); line-height: 1;
+  text-transform: lowercase;
+}
+.menu__lista a small { font-family: var(--f-texto); font-size: 13px; letter-spacing: 0.18em; color: var(--celeste); min-width: 2.4em; }
+.menu__lista a[aria-current="page"] span { color: var(--coral); }
+.menu__lista li { opacity: 0; transform: translateY(24px); transition: opacity 0.4s, transform 0.6s cubic-bezier(.2, .8, .2, 1); }
+body.menu-abierto .menu__lista li { opacity: 1; transform: none; }
+body.menu-abierto .menu__lista li:nth-child(1) { transition-delay: 0.25s; }
+body.menu-abierto .menu__lista li:nth-child(2) { transition-delay: 0.31s; }
+body.menu-abierto .menu__lista li:nth-child(3) { transition-delay: 0.37s; }
+body.menu-abierto .menu__lista li:nth-child(4) { transition-delay: 0.43s; }
+body.menu-abierto .menu__lista li:nth-child(5) { transition-delay: 0.49s; }
+.menu__contacto { display: grid; gap: 4px; font-size: 16px; color: var(--celeste); }
+.menu__contacto a { min-height: 40px; display: inline-flex; align-items: center; }
+body.menu-abierto .cabecera { background: var(--rosa); }
+
+/* ─── 8. ETIQUETA QUE SIGUE AL MOUSE (el cursor normal SIEMPRE se ve) */
+.cursor-etiqueta {
+  position: fixed; left: 0; top: 0; z-index: 9990; pointer-events: none;
+  padding: 7px 12px; border-radius: 999px;
+  background: var(--indigo); color: var(--rosa);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+  opacity: 0; transform: translate(-999px, -999px);
+  transition: opacity 0.2s;
+}
+.cursor-etiqueta.visible { opacity: 1; }
+@media (hover: none), (pointer: coarse) { .cursor-etiqueta { display: none; } }
+
+/* ─── 9. TRANSICIÓN ENTRE PÁGINAS (el gato como "iris") ─────────
+   Al salir: capas de color crecen a través de la silueta del gato
+   hasta tapar la pantalla. Al entrar: un agujero con forma de gato
+   se abre y deja ver la página nueva.                              */
+.transicion { position: fixed; inset: 0; z-index: 9800; pointer-events: none; }
+.transicion__capa {
+  position: absolute; inset: 0;
+  -webkit-mask: var(--gato-mascara) center / 0% no-repeat;
+          mask: var(--gato-mascara) center / 0% no-repeat;
+}
+.transicion__capa:nth-child(1) { background: var(--rojo); }
+.transicion__capa:nth-child(2) { background: var(--vino); }
+.transicion__capa:nth-child(3) { background: var(--indigo); }
+.transicion.saliendo { pointer-events: all; }
+.transicion.saliendo .transicion__capa { animation: iris-cierra 1s cubic-bezier(.6, 0, .4, 1) both; }
+.transicion.saliendo .transicion__capa:nth-child(2) { animation-delay: 0.1s; }
+.transicion.saliendo .transicion__capa:nth-child(3) { animation-delay: 0.2s; }
+@keyframes iris-cierra {
+  0%   { -webkit-mask-size: 0%; mask-size: 0%; }
+  45%  { -webkit-mask-size: 55%; mask-size: 55%; }
+  100% { -webkit-mask-size: 4200%; mask-size: 4200%; }
+}
+.transicion__entrada {
+  position: absolute; inset: 0; background: var(--indigo);
+  -webkit-mask: var(--gato-mascara) center / 0% no-repeat, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: var(--gato-mascara) center / 0% no-repeat exclude, linear-gradient(#000 0 0);
+  display: none;
+}
+.transicion.entrando .transicion__entrada { display: block; animation: iris-abre 1.1s 0.05s cubic-bezier(.6, 0, .4, 1) both; }
+@keyframes iris-abre {
+  0%   { -webkit-mask-size: 0%, 100% 100%; mask-size: 0%, 100% 100%; }
+  40%  { -webkit-mask-size: 45%, 100% 100%; mask-size: 45%, 100% 100%; }
+  100% { -webkit-mask-size: 4200%, 100% 100%; mask-size: 4200%, 100% 100%; }
+}
+
+/* ─── 10. APARECER AL HACER SCROLL ─────────────────────────────────
+   Se usa la propiedad "translate" (no "transform") para no pisar los
+   giros que ya tienen algunos elementos (polaroids, notas, el disco). */
+.revela { opacity: 0; translate: 0 44px; transition: opacity 0.9s ease, translate 1s cubic-bezier(.2, .8, .2, 1); }
+.revela.visible { opacity: 1; translate: 0 0; }
+.revela[data-retraso="1"] { transition-delay: 0.1s; }
+.revela[data-retraso="2"] { transition-delay: 0.2s; }
+.revela[data-retraso="3"] { transition-delay: 0.3s; }
+
+/* barrido: un bloque de color cruza el título y lo destapa */
+.barrido { position: relative; display: inline-block; color: transparent; transition: color 0s 0.45s; }
+.barrido::after {
+  content: ''; position: absolute; inset: 0.02em -0.04em;
+  background: var(--acento-grande);
+  transform: scaleX(0); transform-origin: left;
+}
+.barrido.visible { color: inherit; }
+.barrido.visible::after { animation: barre 0.9s cubic-bezier(.7, 0, .3, 1) forwards; }
+@keyframes barre {
+  0%   { transform: scaleX(0); transform-origin: left; }
+  50%  { transform: scaleX(1); transform-origin: left; }
+  50.1%{ transform: scaleX(1); transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
+/* ─── 11. VOLVER ARRIBA (botón flotante) ───────────────────────── */
+.arriba {
+  position: fixed; right: var(--margen); bottom: 18px; z-index: 780;
+  width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--indigo); color: var(--rosa);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--indigo) 30%, transparent);
+  opacity: 0; translate: 0 20px; pointer-events: none;
+  transition: opacity 0.3s, translate 0.3s;
+}
+.arriba.visible { opacity: 1; translate: 0 0; pointer-events: auto; }
+.arriba svg { width: 20px; transform: rotate(-90deg); }
+
+/* ─── 12. PIE DE PÁGINA (lo arma comun.js con datos.js) ─────────── */
+.pie { position: relative; padding: var(--seccion) var(--margen) 28px; overflow: hidden; }
+.pie__grande {
+  display: block; width: fit-content;
+  font-family: var(--f-titulo); font-size: clamp(60px, 14vw, 240px); line-height: 0.9;
+  text-transform: lowercase;
+  margin-bottom: clamp(36px, 5vw, 72px);
+  transition: color 0.3s;
+}
+.pie__grande em { font-style: normal; color: var(--rojo); }
+@media (hover: hover) { .pie__grande:hover { color: var(--coral); } }
+.pie__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; font-size: 16px; }
+.pie__grid h3 { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-2); margin-bottom: 10px; }
+.pie__grid a, .pie__grid button {
+  display: inline-flex; align-items: center; min-height: 40px;
+  border-bottom: 1.5px solid transparent; transition: border-color 0.3s, color 0.3s;
+  overflow-wrap: anywhere; text-align: left;
+}
+@media (hover: hover) { .pie__grid a:hover, .pie__grid button:hover { color: var(--coral); border-color: currentColor; } }
+.pie__creditos { margin-top: 6px; text-decoration: underline; text-underline-offset: 4px; }
+.pie__base {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin-top: clamp(40px, 7vw, 90px); padding-top: 20px; border-top: 1px solid var(--linea);
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tinta-2);
+}
+@media (max-width: 900px) { .pie__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .pie__grid { grid-template-columns: 1fr; gap: 22px; } }
+
+/* ─── 13. CRÉDITOS FINALES (botón "ver créditos" del pie) ───────── */
+.creditos {
+  position: fixed; inset: 0; z-index: 9600;
+  background: var(--indigo); color: var(--rosa);
+  display: none; overflow: hidden; text-align: center;
+  cursor: pointer;
+}
+.creditos.activo { display: block; }
+.creditos__rollo { position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: 54px; padding: 0 var(--margen); }
+.creditos__rollo p { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--celeste); }
+.creditos__rollo strong { display: block; margin-top: 8px; font-family: var(--f-titulo); font-weight: 900; font-size: clamp(28px, 5vw, 56px); letter-spacing: 0; text-transform: lowercase; color: var(--rosa); }
+.creditos__rollo img { width: min(240px, 50vw); margin: 0 auto; }
+.creditos__cerrar {
+  position: absolute; top: 18px; right: var(--margen); z-index: 2;
+  display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px; border-radius: 999px;
+  background: var(--rosa); color: var(--indigo); font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.creditos__pista { position: absolute; left: 0; right: 0; bottom: 18px; font-size: 13px; color: var(--celeste); }
+
+/* ─── 14. MOVIMIENTO REDUCIDO ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .revela { opacity: 1; translate: none; }
+  .barrido { color: inherit; }
+}
