@@ -196,20 +196,128 @@
         </div>
       </div>
 
-      <!-- b · BOCETOS -->
+      <!-- b · BOCETOS: el diario de bocetos que pasa hojas (igual que en el caso 1)
+           Cada hoja muestra el boceto a lápiz y la pieza final a color. -->
       <div class="parte" id="bocetos">
         <p class="parte__etapa">prototipar</p>
         <h3 class="parte__titulo revela"><b>b</b> bocetos</h3>
-        <p class="parte__intro revela">Primero resolví todo a lápiz, la composición del cuarto y la silueta de cada objeto. Si una forma no se entendía en blanco y negro, no iba a funcionar a color.</p>
-        <button type="button" class="libreta revela" data-ampliar="assets/img/reka/bocetos.jpg" data-cursor="ampliar" aria-label="Ampliar los bocetos del cuaderno">
-          <img src="assets/img/reka/bocetos.jpg" alt="Cuaderno abierto con bocetos a lápiz. A la izquierda el cuarto con el nombre Reka; a la derecha el dulce, la lata, la lámpara, los audífonos, el avión y un marco con una enredadera" loading="lazy" width="1600" height="1198">
-          <span class="mockup__lupa" aria-hidden="true">ampliar +</span>
-        </button>
-        <ol class="hallazgos hallazgos--3">
-          <li class="papel revela"><b>01</b><strong>El cuarto.</strong> El nombre a la izquierda y el cuarto a la derecha, con espacio libre para leer “empezando pronto” sin ruido.</li>
-          <li class="papel revela" data-retraso="1"><b>02</b><strong>Los objetos.</strong> Un objeto por alerta, con contorno grueso y líneas de movimiento.</li>
-          <li class="papel revela" data-retraso="2"><b>03</b><strong>Los marcos.</strong> La enredadera crece solo en las esquinas y nunca sobre el juego.</li>
-        </ol>
+        <p class="parte__intro revela">Primero resolví todo a lápiz, la composición del cuarto y la silueta de cada objeto. Si una forma no se entendía en blanco y negro, no iba a funcionar a color. Pasa las hojas de mi diario.</p>
+
+        <div class="bloc revela" data-bloc>
+          <!-- Cada hoja se da vuelta cuando su casilla (checkbox) se marca.
+               Las marcan los botones, las flechas del teclado o el dedo. -->
+          <input class="bloc__casilla" type="checkbox" id="hoja-1" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-2" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-3" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-4" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-5" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-6" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-7" tabindex="-1" aria-hidden="true">
+          <input class="bloc__casilla" type="checkbox" id="hoja-8" tabindex="-1" aria-hidden="true">
+
+          <div class="bloc__marco" data-cursor="pasa la hoja">
+            <div class="bloc__libreta">
+              <div class="bloc__espiral" aria-hidden="true"></div>
+
+              <!-- HOJA 1: tapa del diario -->
+              <div class="bloc__hoja" id="h1">
+                <div class="bloc__cara bloc__cara--frente bloc__tapa">
+                  <img src="assets/img/reka/lampara.webp" alt="" class="bloc__flor bloc__flor--lampara">
+                  <p class="bloc__tapa-titulo">bocetos</p>
+                  <p class="bloc__tapa-sub">reka · kit de stream</p>
+                  <p class="bloc__tapa-pista"><span class="solo-mouse">haz clic o arrastra de lado para pasar la hoja</span><span class="solo-tactil">desliza con el dedo para pasar la hoja</span></p>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <div class="bloc__hoja" id="h2">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">el cuarto de día · pantalla de inicio <span>el nombre a la izquierda y el cuarto a la derecha, con aire para leer “empezando pronto”</span></p>
+                  <div class="bloc__par bloc__par--ancho">
+                    <figure><img src="assets/img/reka/boceto-pantalla-inicio.jpg" alt="Boceto a lápiz del cuarto con el rótulo Reka empezando pronto" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/pantalla-inicio.jpg" alt="Pantalla de inicio final a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+              <div class="bloc__hoja" id="h3">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">1 bit · el dulce <span>pequeño y simple, un gesto rápido de apoyo</span></p>
+                  <div class="bloc__par bloc__par--objeto">
+                    <figure><img src="assets/img/reka/boceto-dulce.jpg" alt="Boceto a lápiz del dulce" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/dulce.webp" alt="Dulce final a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+              <div class="bloc__hoja" id="h4">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">100 bits · la lata <span>más grande, con burbujas que la hacen moverse</span></p>
+                  <div class="bloc__par bloc__par--objeto">
+                    <figure><img src="assets/img/reka/boceto-lata.jpg" alt="Boceto a lápiz de la lata de soda" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/lata.webp" alt="Lata de soda final a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+              <div class="bloc__hoja" id="h5">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">1000 bits · la lámpara de lava <span>el objeto con luz y destellos, el aporte más especial</span></p>
+                  <div class="bloc__par bloc__par--objeto">
+                    <figure><img src="assets/img/reka/boceto-lampara.jpg" alt="Boceto a lápiz de la lámpara de lava" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/lampara.webp" alt="Lámpara de lava final a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                  <span class="bloc__sello">el más grande</span>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+              <div class="bloc__hoja" id="h6">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">suscripción · los audífonos <span>líneas de sonido a los lados para que se sienta la vibración</span></p>
+                  <div class="bloc__par bloc__par--objeto">
+                    <figure><img src="assets/img/reka/boceto-audifonos.jpg" alt="Boceto a lápiz de los audífonos" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/audifonos.webp" alt="Audífonos finales a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+              <div class="bloc__hoja" id="h7">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">seguidor · el avión de papel <span>la estela dibuja el vuelo, alguien nuevo llega al cuarto</span></p>
+                  <div class="bloc__par bloc__par--objeto">
+                    <figure><img src="assets/img/reka/boceto-avion.jpg" alt="Boceto a lápiz del avión de papel" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/avion.webp" alt="Avión de papel final a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+              <div class="bloc__hoja" id="h8">
+                <div class="bloc__cara bloc__cara--frente">
+                  <p class="bloc__nota">el cuarto de noche · pantalla de cierre <span>el mismo cuarto con luna en la ventana, el stream terminó</span></p>
+                  <div class="bloc__par bloc__par--ancho">
+                    <figure><img src="assets/img/reka/boceto-pantalla-cierre.jpg" alt="Boceto a lápiz del cuarto de noche con el rótulo nos vemos en el próximo stream" loading="lazy"><figcaption>boceto</figcaption></figure>
+                    <figure><img src="assets/img/reka/pantalla-cierre.jpg" alt="Pantalla de cierre final a color" loading="lazy"><figcaption>final</figcaption></figure>
+                  </div>
+                </div>
+                <div class="bloc__cara bloc__cara--dorso"></div>
+              </div>
+
+              <!-- contratapa (no se da vuelta) -->
+              <div class="bloc__contratapa">
+                <img src="assets/img/logo/gato-rosa.png" alt="" width="80" height="76">
+                <p>fin del diario</p>
+                <button type="button" class="boton" data-bloc-reiniciar>volver a la tapa</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bloc__controles">
+            <button type="button" class="bloc__boton" data-bloc-anterior aria-label="Hoja anterior"><span data-flecha="180"></span></button>
+            <div class="bloc__puntos" aria-hidden="true"></div>
+            <span class="bloc__contador" aria-live="polite">1 / 9</span>
+            <button type="button" class="bloc__boton" data-bloc-siguiente aria-label="Hoja siguiente"><span data-flecha></span></button>
+          </div>
+        </div>
       </div>
 
       <!-- c · PRUEBAS DE COLOR -->
@@ -279,12 +387,14 @@
             </ul>
           </div>
         </div>
-        <!-- prueba de escala hecha en HTML: el mismo rótulo a tres tamaños -->
+        <!-- prueba de escala: el mismo rótulo de Reka en los tres tamaños del kit -->
         <div class="escala revela">
-          <span class="escala__reka" style="--t:clamp(46px,7vw,104px)">REKA<small>pantallas</small></span>
-          <span class="escala__reka" style="--t:clamp(28px,3.6vw,50px)">REKA<small>overlay</small></span>
-          <span class="escala__reka" style="--t:clamp(18px,2vw,28px)">REKA<small>cámara</small></span>
-          <p>Prueba de escala. El rótulo debía funcionar desde la pantalla completa hasta la pestaña de la cámara.</p>
+          <div class="escala__tamanos">
+            <img src="assets/img/reka/escala-pantallas.jpg" alt="Rótulo Reka en tamaño grande, para pantallas" width="670" height="360" style="--w:670">
+            <img src="assets/img/reka/escala-overlay.jpg" alt="Rótulo Reka en tamaño mediano, para el overlay" width="330" height="360" style="--w:330">
+            <img src="assets/img/reka/escala-camara.jpg" alt="Rótulo Reka en tamaño chico, para la pestaña de la cámara" width="190" height="360" style="--w:190">
+          </div>
+          <p>Prueba de escala. El mismo rótulo debía funcionar desde la pantalla completa hasta la pestaña de la cámara.</p>
         </div>
       </div>
 
@@ -414,10 +524,6 @@
             <video src="assets/video/reka-seguidor.mp4" poster="assets/img/posters/reka-seguidor.jpg" muted loop playsinline preload="none" aria-label="Alerta de seguidor: el avión vuela con su estela"></video>
             <span class="alerta__info"><small>seguidor</small>El avión vuela con su estela</span><span class="alerta__sonido" aria-hidden="true">🔈</span>
           </button>
-          <div class="alerta alerta--nota papel revela" data-retraso="2">
-            <p class="mini-titulo">dato técnico</p>
-            <p>En OBS cada alerta va sobre el azul de recorte. Aquí lo quité para que veas solo el objeto.</p>
-          </div>
         </div>
       </div>
 

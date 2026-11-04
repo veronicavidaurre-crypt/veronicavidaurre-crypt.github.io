@@ -7,7 +7,8 @@
      5. Pantallas de inicio y cierre (interruptor día / noche)
      6. Simulador del stream en vivo (overlays + alertas)
      7. Videos de las alertas (se mueven al verse, clic = sonido)
-     8. Visor de imágenes (bocetos y sistema)
+     8. Visor de imágenes (sistema)
+     9. Diario de bocetos: hojas con checkbox + deslizar + teclado
    ═══════════════════════════════════════════════════════════════ */
 (() => {
   const { $, $$ } = V;
@@ -193,4 +194,54 @@
   const cerrarVisor = () => { visor.close ? visor.close() : visor.removeAttribute('open'); };
   visor.addEventListener('click', cerrarVisor);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && visor.open) cerrarVisor(); });
+
+
+  /* ─── 9. DIARIO DE BOCETOS ────────────────────────────────────────
+     Igual que en el caso 1: las hojas giran por CSS cuando su
+     checkbox se marca. Aquí solo se decide QUÉ checkbox marcar.      */
+  const bloc = $('[data-bloc]');
+  if (bloc) {
+    const casillas = $$('.bloc__casilla', bloc);
+    const marco = $('.bloc__marco', bloc);
+    const puntos = $('.bloc__puntos', bloc);
+    const contador = $('.bloc__contador', bloc);
+    const btnAnt = $('[data-bloc-anterior]', bloc), btnSig = $('[data-bloc-siguiente]', bloc);
+    const total = casillas.length + 1;               // hojas + contratapa
+    puntos.innerHTML = '<i></i>'.repeat(total);
+    const hojaActual = () => casillas.filter(c => c.checked).length;   // 0 = tapa
+    const pintar = () => {
+      const n = hojaActual();
+      $$('i', puntos).forEach((p, i) => p.classList.toggle('on', i === n));
+      contador.textContent = `${n + 1} / ${total}`;
+      btnAnt.disabled = n === 0; btnSig.disabled = n === casillas.length;
+    };
+    const pasar = dir => {
+      const n = hojaActual();
+      if (dir > 0 && n < casillas.length) casillas[n].checked = true;
+      else if (dir < 0 && n > 0) casillas[n - 1].checked = false;
+      else return;
+      V.sonido.papel(); pintar();
+    };
+    btnSig.addEventListener('click', () => pasar(1));
+    btnAnt.addEventListener('click', () => pasar(-1));
+    $('[data-bloc-reiniciar]', bloc).addEventListener('click', async e => {
+      e.stopPropagation();
+      for (let i = casillas.length - 1; i >= 0; i--) { casillas[i].checked = false; pintar(); V.sonido.papel(); await V.espera(110); }
+    });
+    bloc.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); pasar(1); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); pasar(-1); }
+    });
+    // deslizar de lado pasa la hoja; un toque corto sin deslizar, también
+    let x0 = null, y0 = 0, t0 = 0;
+    marco.addEventListener('pointerdown', e => { if (e.target.closest('button')) return; x0 = e.clientX; y0 = e.clientY; t0 = performance.now(); });
+    marco.addEventListener('pointerup', e => {
+      if (x0 === null) return;
+      const dx = e.clientX - x0, dy = e.clientY - y0, dt = performance.now() - t0; x0 = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) pasar(dx < 0 ? 1 : -1);
+      else if (Math.abs(dx) < 8 && Math.abs(dy) < 8 && dt < 400) pasar(1);
+    });
+    marco.addEventListener('pointercancel', () => { x0 = null; });
+    pintar();
+  }
 })();
