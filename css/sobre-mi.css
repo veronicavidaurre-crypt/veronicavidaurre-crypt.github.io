@@ -99,9 +99,19 @@
 .nota__cuerpo ul { list-style: none; display: grid; gap: 10px; }
 .nota__cuerpo li { padding-left: 20px; position: relative; }
 .nota__cuerpo li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 8px; height: 8px; background: var(--vino); border-radius: 50%; }
-.nota__cuerpo a:not(.boton) { border-bottom: 1px solid currentColor; }
+.nota__cuerpo a:not(.boton):not(.nota__boceto) { border-bottom: 1px solid currentColor; }
 .nota__cuerpo .boton { margin-top: 8px; }
 .nota__cerrar { position: absolute; top: 10px; right: 10px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 14px; font-weight: 700; background: var(--indigo); color: var(--rosa); }
+
+/* los dos diarios de bocetos dentro de la nota */
+.nota__bocetos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px; }
+.nota__boceto { display: grid; gap: 2px; padding: 8px 8px 12px; border-radius: 12px; background: #FBF6F8; border: 2px solid color-mix(in srgb, var(--indigo) 18%, transparent); color: var(--indigo); transition: border-color 0.3s, translate 0.3s; }
+.nota__boceto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: #fff; margin-bottom: 8px; }
+.nota__boceto small { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vino); }
+.nota__boceto b { font-family: var(--f-titulo); font-weight: 900; font-size: 19px; line-height: 1.05; text-transform: lowercase; }
+.nota__boceto span { font-size: 13px; font-weight: 700; margin-top: 4px; }
+@media (hover: hover) { .nota__boceto:hover { border-color: var(--vino); translate: 0 -3px; } }
+@media (max-width: 420px) { .nota__bocetos { grid-template-columns: 1fr; } .nota__boceto img { aspect-ratio: 16 / 9; } }
 
 /* ─── VERSIÓN RÁPIDA ─────────────────────────────────────────── */
 .rapida { padding-top: var(--seccion); padding-bottom: var(--seccion); display: grid; gap: 28px; }
